@@ -62,14 +62,21 @@ public class PlayerMove : MonoBehaviour {
         transform.localScale = theScale;
     }
 
-    public void OnTriggerStay(Collider collider) {
-        Vector2 velocity = new Vector2(0f, 0.1f);
+    public void OnTriggerStay2D(Collider2D collider) {
         if(collider.gameObject.tag == "Ladder" && Input.GetKey(KeyCode.W)) {
-            rb2D.MovePosition(rb2D.position + velocity * Time.deltaTime);
+            Debug.Log("Collide with ladder");
+            rb2D.velocity = new Vector2(0f, 10f);
+        } else if(collider.gameObject.tag == "Ladder" && Input.GetKey(KeyCode.S)) {
+            Debug.Log("Collide with ladder");
+            rb2D.velocity = new Vector2(0f, -10f);
+        } else if(collider.gameObject.tag == "Ladder" && Input.GetKey(KeyCode.S)) {
+            rb2D.velocity = new Vector2(0f, 0f);
         }
+    }
 
-        if(collider.gameObject.tag == "Ladder" && Input.GetKey(KeyCode.D)) {
-            rb2D.MovePosition(rb2D.position - velocity * Time.deltaTime);
+    public void OnTriggerExit2D(Collider2D collider) {
+        if(collider.gameObject.tag == "Ladder") {
+            rb2D.velocity = new Vector2(0f, 0f);
         }
     }
 }
