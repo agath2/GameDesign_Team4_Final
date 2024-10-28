@@ -15,7 +15,7 @@ public class GameHandler : MonoBehaviour
     // Method to start the game from the intro scene
     public void StartGame()
     {
-        SceneManager.LoadScene(introScene); // Load the intro scene
+        SceneManager.LoadScene(levelScene); // Load the intro scene
     }
 
     // Method to transition to the how-to-play scene
