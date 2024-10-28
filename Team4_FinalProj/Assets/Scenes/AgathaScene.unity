@@ -626,8 +626,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc25fa4a41be2bc43ba9375f504bb521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LaunchForce: 1500
+  LaunchForce: 100
   Treat: {fileID: 990770348808592571, guid: 3e21f1f027931454da08b612db0bd0e1, type: 3}
+  canThrow: 1
 --- !u!1 &1936206343
 GameObject:
   m_ObjectHideFlags: 0

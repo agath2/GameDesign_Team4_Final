@@ -8,6 +8,8 @@ public class TreatScript : MonoBehaviour
 
     public GameObject Treat; 
 
+    public bool canThrow = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +19,17 @@ public class TreatScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.LeftShift)){
+        if(Input.GetKey(KeyCode.LeftShift) && canThrow){
+            canThrow = false;
             // when shift is pressed we throw a treat
             Throw();
+            StartCoroutine(throwCoroutine());
         }
+    }
+
+    IEnumerator throwCoroutine(){
+        yield return new WaitForSeconds(3);
+        canThrow = true;
     }
 
     void Throw(){
