@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2732154016038353280}
   - component: {fileID: 1252465407819496645}
   - component: {fileID: 4661570488360258879}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 6553580211174156848}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2732154016038353280
 BoxCollider2D:
@@ -50,7 +50,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -106,7 +106,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &4661570488360258879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,6 +125,7 @@ MonoBehaviour:
   moveSpeed: 8
   topSpeed: 10
   followPlayer: 1
+  anim: {fileID: 0}
 --- !u!1 &2230567034847706723
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,8 +136,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6553580211174156848}
   - component: {fileID: 4210694174031678787}
-  m_Layer: 0
-  m_Name: dog_idle
+  - component: {fileID: 5562593162095191226}
+  m_Layer: 8
+  m_Name: dog_art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -209,3 +211,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5562593162095191226
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2230567034847706723}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 805593f3a7fb3478e8365d689b4c4c55, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

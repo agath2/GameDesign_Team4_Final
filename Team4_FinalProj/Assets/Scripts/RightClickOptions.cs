@@ -58,7 +58,7 @@ public class RightClickOptions : MonoBehaviour
         Debug.Log("Go Here clicked");
 
         Vector2 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        dog.MoveToPosition(worldPosition);
+        dog.SetTargetPosition(worldPosition);
         optionMenu.SetActive(false); 
     }
 
