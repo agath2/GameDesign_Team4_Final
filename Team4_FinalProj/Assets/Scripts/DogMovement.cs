@@ -7,76 +7,76 @@ public class DogMovement : MonoBehaviour
     public GameObject player;
     private Vector2 playerPos;
     private float distToPlayer;
-    public float followDistance = 2f; //Stop moving towards player when at this distance
-    public float startFollowDistance; //Follow Player when further than this distance
+    public float followDistance = 0.5f; 
     public float moveSpeed = 8f;
     public float topSpeed = 10f;
     private float scaleX;
     public bool followPlayer = true;
     private Vector2 targetPosition;
     private bool moveToTarget = false;
+    public Animator anim;
     
 
-
-    // Start is called before the first frame update
     void Start()
     {
+        anim = gameObject.GetComponentInChildren<Animator>();
+
+        player = GameObject.FindWithTag("Player");
+
         scaleX = gameObject.transform.localScale.x;
-        startFollowDistance = followDistance + 1f;
     }
 
-    // Update is called once per frame
     void Update()
     {
 
     }
 
     void FixedUpdate(){
-        if(moveToTarget){
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
+        if (moveToTarget)
+        {
+            MoveToTarget(targetPosition);
             if (Vector2.Distance(transform.position, targetPosition) <= 0.5f){
-                    moveToTarget = false;
+                anim.SetBool("Walk", false); 
+                moveToTarget = false;
             }
-
-            if (targetPosition.x > gameObject.transform.position.x){
-                    gameObject.transform.localScale = new Vector2(scaleX, gameObject.transform.localScale.y);
-            } else {
-                    gameObject.transform.localScale = new Vector2(scaleX * -1, gameObject.transform.localScale.y);
-            }
-
         }
-        else if (followPlayer){
-            playerPos = player.transform.position;
-            distToPlayer = Vector2.Distance(transform.position, playerPos);
-
-            //Retreat from Player
-            if (distToPlayer <= followDistance){
-                    transform.position = Vector2.MoveTowards (transform.position, playerPos, -moveSpeed * Time.deltaTime);
-                    //anim.SetBool("Walk", true);
-            }
-
-            // Stop following Player
-            if ((distToPlayer > followDistance) && (distToPlayer < startFollowDistance)){
-                    transform.position = this.transform.position;
-                    //anim.SetBool("Walk", false);
-            }
-
-            // Follow Player
-            else if (distToPlayer >= startFollowDistance){
-                    transform.position = Vector2.MoveTowards (transform.position, playerPos, moveSpeed * Time.deltaTime);
-                    //anim.SetBool("Walk", true);
-            }
-            
-            if (player.transform.position.x > gameObject.transform.position.x){
-                    gameObject.transform.localScale = new Vector2(scaleX, gameObject.transform.localScale.y);
-            } else {
-                    gameObject.transform.localScale = new Vector2(scaleX * -1, gameObject.transform.localScale.y);
-            }
+        else if (followPlayer)
+        {
+            HandlePlayerFollowing();
         }
     }
 
-    public void MoveToPosition(Vector2 position)
+
+    private void HandlePlayerFollowing()
+    {
+        Vector2 playerPos = player.transform.position;
+        float distToPlayer = Vector2.Distance(transform.position, playerPos);
+
+        if (distToPlayer < followDistance)
+        {
+            anim.SetBool("Walk", false); 
+            FlipSprite(playerPos.x > transform.position.x);
+        }
+        else
+        {
+            MoveToTarget(playerPos);
+        }
+    }
+
+    private void MoveToTarget(Vector2 target)
+    {
+        FlipSprite(target.x > transform.position.x);
+        anim.SetBool("Walk", true);
+        transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
+    }
+
+    private void FlipSprite(bool facingRight)
+    {
+        transform.localScale = new Vector2(facingRight ? scaleX : -scaleX, transform.localScale.y);
+    }
+
+    public void SetTargetPosition(Vector2 position)
     {
         targetPosition = position;
         moveToTarget = true;
@@ -92,5 +92,9 @@ public class DogMovement : MonoBehaviour
     {
         moveToTarget = false;
         followPlayer = false;
+        anim.SetBool("Walk", false);
+        FlipSprite(player.transform.position.x > transform.position.x);
     }
+
+    
 }
