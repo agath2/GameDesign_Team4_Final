@@ -7,23 +7,28 @@ public class DogMovement : MonoBehaviour
     public GameObject player;
     private Vector2 playerPos;
     private float distToPlayer;
-    public float followDistance = 0.5f; 
+    public float followDistance = 1f; 
     public float moveSpeed = 8f;
-    public float topSpeed = 10f;
+    public float jumpForce = 6f;
+    public Rigidbody2D rb;
     private float scaleX;
     public bool followPlayer = true;
     private Vector2 targetPosition;
     private bool moveToTarget = false;
     public Animator anim;
+
+    private MapManager mapManager;
     
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponentInChildren<Animator>();
 
         player = GameObject.FindWithTag("Player");
-
         scaleX = gameObject.transform.localScale.x;
+
+        mapManager = FindObjectOfType<MapManager>();
     }
 
     void Update()
@@ -66,9 +71,32 @@ public class DogMovement : MonoBehaviour
 
     private void MoveToTarget(Vector2 target)
     {
+
         FlipSprite(target.x > transform.position.x);
         anim.SetBool("Walk", true);
-        transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
+
+        if(mapManager.GetTileJumpability(transform.position) && mapManager.GetTileJumpability(transform.position)){
+            if(target.y >= transform.position.y + 1){
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            }
+        }
+        else if (mapManager.GetTileJumpability(transform.position)){
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+        else if (mapManager.GetTileWalkability(transform.position)){
+
+        }
+
+        if(rb.velocity.y > 0){
+            anim.SetTrigger("Jump");
+        }
+        // anim.SetBool("Jump", (rb.velocity.y > 0));
+
+        Vector2 newPosition = new Vector2(
+            Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime).x,
+            transform.position.y
+        );
+        transform.position = newPosition;
     }
 
     private void FlipSprite(bool facingRight)
@@ -96,5 +124,5 @@ public class DogMovement : MonoBehaviour
         FlipSprite(player.transform.position.x > transform.position.x);
     }
 
-    
+
 }
