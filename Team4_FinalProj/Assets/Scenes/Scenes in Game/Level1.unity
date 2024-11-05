@@ -985,6 +985,87 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 784351d6d700a468aa0ae3e0dad3e6f8, type: 3}
+--- !u!1001 &1059224636
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2098448132049386816, guid: dad0a517148e04005a0e1f5375b180ba, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2098448132049386816, guid: dad0a517148e04005a0e1f5375b180ba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22.194178
+      objectReference: {fileID: 0}
+    - target: {fileID: 2098448132049386816, guid: dad0a517148e04005a0e1f5375b180ba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 2098448132049386816, guid: dad0a517148e04005a0e1f5375b180ba, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.027627522
+      objectReference: {fileID: 0}
+    - target: {fileID: 2098448132049386816, guid: dad0a517148e04005a0e1f5375b180ba, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2098448132049386816, guid: dad0a517148e04005a0e1f5375b180ba, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2098448132049386816, guid: dad0a517148e04005a0e1f5375b180ba, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2098448132049386816, guid: dad0a517148e04005a0e1f5375b180ba, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2098448132049386816, guid: dad0a517148e04005a0e1f5375b180ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2098448132049386816, guid: dad0a517148e04005a0e1f5375b180ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2098448132049386816, guid: dad0a517148e04005a0e1f5375b180ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544343021304196772, guid: dad0a517148e04005a0e1f5375b180ba, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186547836389766806, guid: dad0a517148e04005a0e1f5375b180ba, type: 3}
+      propertyPath: m_Name
+      value: PlatformMoveSYSTEM
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141787394555626232, guid: dad0a517148e04005a0e1f5375b180ba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141787394555626232, guid: dad0a517148e04005a0e1f5375b180ba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273011486267368535, guid: dad0a517148e04005a0e1f5375b180ba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273011486267368535, guid: dad0a517148e04005a0e1f5375b180ba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.33
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dad0a517148e04005a0e1f5375b180ba, type: 3}
 --- !u!1 &1085256629
 GameObject:
   m_ObjectHideFlags: 0
@@ -5462,7 +5543,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d094594745c3483d80717b754324fce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorOpened: {fileID: 0}
+  doorLocked: {fileID: 0}
+  msgNeedKey: {fileID: 0}
   NextLevel: StartScene
+  DoorOpen: {fileID: 0}
 --- !u!61 &1834225399
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -48,9 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpened: {fileID: 4054151729281532355}
+  doorLocked: {fileID: 3456760972332252680}
   msgNeedKey: {fileID: 0}
   NextLevel: StartScene
-  DoorOpen: {fileID: 0}
+  DoorOpen: {fileID: 8300000, guid: f5e394ca5110648e89c014cd6bbc9717, type: 3}
 --- !u!61 &3902406311848341226
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -81,9 +82,9 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13019276, y: -0.10126066}
+  m_Offset: {x: 0.028188229, y: -0.121661425}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -94,7 +95,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0867939, y: 2.5333738}
+  m_Size: {x: 2.2700357, y: 2.5741754}
   m_EdgeRadius: 0
 --- !u!1 &3456760972332252680
 GameObject:
