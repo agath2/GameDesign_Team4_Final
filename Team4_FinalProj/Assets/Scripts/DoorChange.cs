@@ -1,22 +1,50 @@
-
 using System.Collections.Generic;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DoorExitSimple : MonoBehaviour
+public class DoorChange : MonoBehaviour
 {
-
+    public GameObject doorOpened;
+    public GameObject doorLocked;
+    public GameObject msgNeedKey;
     public string NextLevel = "StartMenu";
     public AudioClip DoorOpen;
+    private bool isLocked = true;
+
+    // Track if the key has been picked up
+    private bool hasKey = false;
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        // Check if the object colliding with the door is the "Fetch" (key)
+        if (other.gameObject.CompareTag("Fetch"))
         {
-            GetComponent<AudioSource> ().Play();
-            SceneManager.LoadScene(NextLevel);
+            hasKey = true;
+            Destroy(other.gameObject);  // Destroy the key (since it's collected)
+            Debug.Log("Key collected!");
+        }
+        else if (other.gameObject.CompareTag("Player"))  // Assuming the player has the tag "Player"
+        {
+            if (hasKey && isLocked)  // If the player has the key and the door is locked
+            {
+                GetComponent<AudioSource>().Play();
+                doorLocked.SetActive(false);
+                doorOpened.SetActive(true);
+                isLocked = false;
+                SceneManager.LoadScene(NextLevel);
+                Debug.Log("Door opened!");
+            }
+            else if (!hasKey)
+            {
+ 
+                Debug.Log("You need a key to enter.");
+            }
+            else
+            {
+                Debug.Log("Door is already open.");
+            }
         }
     }
 
-}
+    // Optional: Hide message when player leaves the are
+    }
