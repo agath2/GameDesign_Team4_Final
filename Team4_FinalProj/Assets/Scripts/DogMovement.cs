@@ -75,22 +75,16 @@ public class DogMovement : MonoBehaviour
         FlipSprite(target.x > transform.position.x);
         anim.SetBool("Walk", true);
 
-        if(mapManager.GetTileJumpability(transform.position) && mapManager.GetTileJumpability(transform.position)){
+        if(mapManager.GetTileJumpability(transform.position)){
             if(target.y >= transform.position.y + 1){
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             }
-        }
-        else if (mapManager.GetTileJumpability(transform.position)){
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        }
-        else if (mapManager.GetTileWalkability(transform.position)){
-
+            
         }
 
         if(rb.velocity.y > 0){
             anim.SetTrigger("Jump");
         }
-        // anim.SetBool("Jump", (rb.velocity.y > 0));
 
         Vector2 newPosition = new Vector2(
             Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime).x,

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: jump
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 7482667652216324306, guid: be703dd2fbdaa4d7c9ac032907734883, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.46666667}
   m_Transform:
     e00: 1
     e01: 0
