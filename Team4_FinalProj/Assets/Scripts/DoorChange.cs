@@ -4,15 +4,15 @@ using UnityEngine.SceneManagement;
 
 public class DoorChange : MonoBehaviour
 {
-    // public GameObject doorOpened;
-    // public GameObject doorLocked;
+     public GameObject doorOpened;
+     public GameObject doorLocked;
     // public GameObject msgNeedKey;
     public string NextLevel = "StartMenu";
     public AudioClip DoorOpen;
     private bool isLocked = true;
 
     // Track if the key has been picked up
-    private bool hasKey = true;
+    private bool hasKey = false;
 
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -28,8 +28,8 @@ public class DoorChange : MonoBehaviour
             if (hasKey && isLocked)  // If the player has the key and the door is locked
             {
               //  GetComponent<AudioSource>().Play();
-                // doorLocked.SetActive(false);
-                // doorOpened.SetActive(true);
+                 doorLocked.SetActive(false);
+                 doorOpened.SetActive(true);
                 isLocked = false;
                 SceneManager.LoadScene(NextLevel);
                 Debug.Log("Door opened!");
