@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scenes in Game/Level1.unity
     guid: 95484a99feb6c4681b5fe5ab8d59e44a
+  - enabled: 1
+    path: Assets/Scenes/Scenes in Game/TutorialDog.unity
+    guid: fc385aa6bdc8e4666b742734c3fec8b8
+  - enabled: 1
+    path: Assets/Scenes/Scenes in Game/TutorialMovement.unity
+    guid: 785fcdcddaa22465695fe4d4649ac70c
   m_configObjects: {}
