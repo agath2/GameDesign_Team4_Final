@@ -124,5 +124,15 @@ public class DogMovement : MonoBehaviour
         FlipSprite(player.transform.position.x > transform.position.x);
     }
 
+    public bool isStopped() {
+        if (!moveToTarget && !followPlayer)
+        {
+            return true;
+        } else
+        {
+            return false;
+        }
+    }
+    
 
 }

@@ -27,7 +27,7 @@ public class DoorChange : MonoBehaviour
         {
             if (hasKey && isLocked)  // If the player has the key and the door is locked
             {
-                GetComponent<AudioSource>().Play();
+              //  GetComponent<AudioSource>().Play();
                 doorLocked.SetActive(false);
                 doorOpened.SetActive(true);
                 isLocked = false;

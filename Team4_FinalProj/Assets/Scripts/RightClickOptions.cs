@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+
 
 public class RightClickOptions : MonoBehaviour
 {
@@ -10,8 +12,9 @@ public class RightClickOptions : MonoBehaviour
     public Button fetchButton;
     private Vector2 mousePosition;
     public DogMovement dog;
-    private GameObject currentFetchable; // Store the current fetchable object.
-    private bool isNearFetchable = false; // Flag to check if the dog is near a fetchable object.
+    private GameObject currentFetchable; 
+    private bool isNearFetchable = false; 
+    public float fetchableRange = 4f;
 
     void Start()
     {
@@ -76,7 +79,6 @@ public class RightClickOptions : MonoBehaviour
         optionMenu.SetActive(false);
     }
 
-    // Method to handle the fetch logic when the fetch button is clicked
     void OnFetchClicked()
     {
         Debug.Log("Fetch clicked");
@@ -84,45 +86,66 @@ public class RightClickOptions : MonoBehaviour
         // Convert mouse position to world position.
         Vector2 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-        // Move the dog to the target position.
+        // Move the dog to the target position first
         dog.SetTargetPosition(worldPosition);
 
-        // If there's a fetchable object nearby, pick it up.
-        if (isNearFetchable && currentFetchable != null)
+        // Wait until the dog reaches the target position
+        StartCoroutine(WaitForDogToStop(worldPosition));
+    }
+
+    // Coroutine to wait for the dog to reach the target
+    IEnumerator WaitForDogToStop(Vector2 targetPosition)
+    {
+        // Wait while the dog is moving
+        while (!dog.isStopped())
         {
-            // Disable the object's physics interactions (if it has any), and attach it to the dog.
-            Rigidbody2D rb = currentFetchable.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.isKinematic = true; // Disable physics to make it follow the dog.
-            }
-
-            // Set the object's position relative to the dog and parent it to the dog.
-            currentFetchable.transform.SetParent(dog.transform); // Parent it to the dog's transform.
-
-            // Position the object at the dog's transform.
-            currentFetchable.transform.localPosition = Vector3.zero;
-
-            currentFetchable.SetActive(true); // Ensure the object is visible after being picked up.
-
-            Debug.Log("Object picked up and now following the dog: " + currentFetchable.name);
+            yield return null; // Wait for one frame
         }
 
-        // Hide the option menu after the fetch action.
-        optionMenu.SetActive(false);
+        // Now the dog has stopped moving, check for fetchable objects
+        CheckForNearbyFetchable();
     }
 
-    // Method to set the fetchable object when the dog is near it
-    public void SetFetchableObject(GameObject fetchable)
-    {
-        isNearFetchable = true;
-        currentFetchable = fetchable;
-    }
 
-    // Method to clear the fetchable object when the dog moves away
-    public void ClearFetchableObject()
+
+    void CheckForNearbyFetchable()
     {
-        isNearFetchable = false;
-        currentFetchable = null;
+        // Get all objects with the "Fetch" tag in the scene
+        GameObject[] fetchables = GameObject.FindGameObjectsWithTag("Fetch");
+
+        // Iterate through each fetchable item
+        foreach (GameObject fetchable in fetchables)
+        {
+            // Calculate the distance between the dog and the fetchable object
+            float distance = Vector2.Distance(dog.transform.position, fetchable.transform.position);
+
+            // If the fetchable is within range, pick it up
+            if (distance <= fetchableRange)
+            {
+                Debug.Log("Fetchable item within range: " + fetchable.name);
+
+                // Set it as the current fetchable object
+                currentFetchable = fetchable;
+
+                // Disable the object's physics interactions (if it has any), and attach it to the dog
+                Rigidbody2D rb = currentFetchable.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    rb.isKinematic = true; // Disable physics to make it follow the dog
+                }
+
+                // Set the object's position relative to the dog and parent it to the dog
+                currentFetchable.transform.SetParent(dog.transform); // Parent it to the dog's transform
+                currentFetchable.transform.localPosition = Vector3.zero; // Position the object at the dog's transform
+
+                currentFetchable.SetActive(true); // Ensure the object is visible after being picked up
+
+                Debug.Log("Object picked up and now following the dog: " + currentFetchable.name);
+
+                return; // Exit once we find the first fetchable object within range
+            }
+        }
+
+        Debug.Log("No fetchable objects within range.");
     }
 }
