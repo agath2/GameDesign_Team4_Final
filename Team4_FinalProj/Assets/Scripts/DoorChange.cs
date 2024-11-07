@@ -9,10 +9,10 @@ public class DoorChange : MonoBehaviour
     // public GameObject msgNeedKey;
     public string NextLevel = "StartMenu";
     public AudioClip DoorOpen;
-    private bool isLocked = true;
+    public bool isLocked = true;
 
     // Track if the key has been picked up
-    private bool hasKey = false;
+    public bool hasKey = false;
 
     public void OnTriggerEnter2D(Collider2D other)
     {
