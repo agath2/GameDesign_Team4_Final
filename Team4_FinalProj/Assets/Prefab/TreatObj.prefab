@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5058941078816617950}
   - component: {fileID: 870581543217483752}
   - component: {fileID: 982431655286023733}
+  - component: {fileID: 503952390726028203}
   m_Layer: 9
   m_Name: TreatObj
   m_TagString: Treat
@@ -113,6 +114,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &503952390726028203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990770348808592571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e14fed48b0051154e8d5f755d9e36a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1902046051893271701
 GameObject:
   m_ObjectHideFlags: 0
