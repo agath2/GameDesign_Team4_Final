@@ -28,7 +28,7 @@ public class TreatScript : MonoBehaviour
     }
 
     IEnumerator throwCoroutine(){
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         canThrow = true;
     }
 
