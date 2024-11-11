@@ -16,7 +16,7 @@ public class DogMovement : MonoBehaviour
     private Vector2 targetPosition;
     private bool moveToTarget = false;
     public Animator anim;
-
+    public GameObject[] treatList;
     private MapManager mapManager;
     
 
@@ -33,7 +33,24 @@ public class DogMovement : MonoBehaviour
 
     void Update()
     {
+        treatList = GameObject.FindGameObjectsWithTag("Treat");
+        Vector2 closest = new Vector2(0, 0);
+        float minDist = Mathf.Infinity;
+        foreach (GameObject curr in treatList) {
+            float currDist = Vector2.Distance(transform.position, curr.transform.position);
+            if (currDist < 1f) {
+                Destroy(curr);
+                anim.SetBool("Walk", false); 
+                moveToTarget = false;
+                continue;
+            }
+            if (minDist > currDist) {
+                minDist = currDist;
+                closest = curr.transform.position;
+            }
+        }
 
+        if (minDist != Mathf.Infinity) SetTargetPosition(closest); 
     }
 
     void FixedUpdate(){
