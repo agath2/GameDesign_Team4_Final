@@ -9,6 +9,7 @@ TagManager:
   - Treat
   - Fetch
   - Key
+  - VolumeSlider
   layers:
   - Default
   - TransparentFX
