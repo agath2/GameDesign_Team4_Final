@@ -7,6 +7,7 @@ TagManager:
   - Ladder
   - WallToggleButton
   - Treat
+  - Clickable
   layers:
   - Default
   - TransparentFX
