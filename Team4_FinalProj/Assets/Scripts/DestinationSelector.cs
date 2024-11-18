@@ -54,7 +54,6 @@ public class DestinationSelector : MonoBehaviour
             if (IsInView(destination.transform.position))
             {
                 destinations.Add(destination);
-                HighlightDestination(destination, true); // Highlight this location
             }
         }
 
