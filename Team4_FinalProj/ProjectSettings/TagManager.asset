@@ -7,6 +7,10 @@ TagManager:
   - Ladder
   - WallToggleButton
   - Treat
+  - Fetch
+  - Key
+  - VolumeSlider
+  - Trampoline
   layers:
   - Default
   - TransparentFX

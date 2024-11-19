@@ -8,6 +8,7 @@ public class WallToggleButton : MonoBehaviour
     public List<WallToggle> wallList = new List<WallToggle>();
     public GameObject buttonUp;
     public GameObject buttonDown;
+    public AudioSource ButtonPressAudio;
 
     private bool pressed = false;
     private bool setup = true;
@@ -39,6 +40,8 @@ public class WallToggleButton : MonoBehaviour
             pressed = true;
             buttonUp.SetActive(false);
             buttonDown.SetActive(true);
+            ButtonPressAudio.Play();
+
             foreach (WallToggle wall in wallList)
             {
                 wall.ToggleState();
@@ -54,6 +57,7 @@ public class WallToggleButton : MonoBehaviour
             pressed = false;
             buttonUp.SetActive(true);
             buttonDown.SetActive(false);
+            ButtonPressAudio.Play();
         }
     }
 }

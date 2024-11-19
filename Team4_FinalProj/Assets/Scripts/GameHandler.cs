@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GameHandler : MonoBehaviour
 {
-    private const string levelScene = "Level1"; // Your single level scene name
+    private const string levelScene = "TutorialMovement"; // Your single level scene name
     private const string introScene = "StartScene"; // Your intro scene name
     private const string howToPlayScene = "HowToPlay"; // Your how-to-play scene name
 

@@ -16,7 +16,7 @@ public class DogMovement : MonoBehaviour
     private Vector2 targetPosition;
     private bool moveToTarget = false;
     public Animator anim;
-
+    public GameObject[] treatList;
     private MapManager mapManager;
     
 
@@ -33,7 +33,24 @@ public class DogMovement : MonoBehaviour
 
     void Update()
     {
+        treatList = GameObject.FindGameObjectsWithTag("Treat");
+        Vector2 closest = new Vector2(0, 0);
+        float minDist = Mathf.Infinity;
+        foreach (GameObject curr in treatList) {
+            float currDist = Vector2.Distance(transform.position, curr.transform.position);
+            if (currDist < 1f) {
+                Destroy(curr);
+                anim.SetBool("Walk", false); 
+                moveToTarget = false;
+                continue;
+            }
+            if (minDist > currDist) {
+                minDist = currDist;
+                closest = curr.transform.position;
+            }
+        }
 
+        if (minDist != Mathf.Infinity) SetTargetPosition(closest); 
     }
 
     void FixedUpdate(){
@@ -75,22 +92,16 @@ public class DogMovement : MonoBehaviour
         FlipSprite(target.x > transform.position.x);
         anim.SetBool("Walk", true);
 
-        if(mapManager.GetTileJumpability(transform.position) && mapManager.GetTileJumpability(transform.position)){
+        if(mapManager.GetTileJumpability(transform.position)){
             if(target.y >= transform.position.y + 1){
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             }
-        }
-        else if (mapManager.GetTileJumpability(transform.position)){
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        }
-        else if (mapManager.GetTileWalkability(transform.position)){
-
+            
         }
 
         if(rb.velocity.y > 0){
             anim.SetTrigger("Jump");
         }
-        // anim.SetBool("Jump", (rb.velocity.y > 0));
 
         Vector2 newPosition = new Vector2(
             Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime).x,
@@ -124,5 +135,15 @@ public class DogMovement : MonoBehaviour
         FlipSprite(player.transform.position.x > transform.position.x);
     }
 
+    public bool isStopped() {
+        if (!moveToTarget && !followPlayer)
+        {
+            return true;
+        } else
+        {
+            return false;
+        }
+    }
+    
 
 }
