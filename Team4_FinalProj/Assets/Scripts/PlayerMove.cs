@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour {
 
+    public GameHandler gameHandlerObj;
     public Animator animator;
     public Rigidbody2D rb2D;
     private bool FaceRight = true; // determine which way player is facing.
@@ -14,16 +15,25 @@ public class PlayerMove : MonoBehaviour {
     private Vector3 hMove;
     public float ClimbingSpeed = 1f;
     public SpriteRenderer spriteRenderer;
+    private DestinationSelector destinationSelector;
 
-    
+
+
 
     void Start(){
+        destinationSelector = FindObjectOfType<DestinationSelector>();
+
         animator = gameObject.GetComponentInChildren<Animator>();
         rb2D = transform.GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     void Update(){
+        // Prevent movement if in selection mode
+        if (destinationSelector != null && destinationSelector.isSelecting)
+        {
+            return;
+        }
         //NOTE: Horizontal axis: [a] / left arrow is -1, [d] / right arrow is 1
         hMove = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
 
@@ -95,5 +105,9 @@ public class PlayerMove : MonoBehaviour {
         }
     }
 
-
+    public void OnTriggerEnter2D(Collider2D collider) {
+        if(collider.gameObject.tag == "Car") {
+            gameHandlerObj.RestartLevel();
+        }
+    }
 }

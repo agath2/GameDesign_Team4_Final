@@ -13,14 +13,23 @@ public class PlayerJump : MonoBehaviour {
     public bool canJump = false;
     public int jumpTimes = 0;
     public bool isAlive = true;
+    private DestinationSelector destinationSelector;
+
     //public AudioSource JumpSFX;
 
     void Start(){
+        destinationSelector = FindObjectOfType<DestinationSelector>();
+
         anim = gameObject.GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
     void Update() {
+        if (destinationSelector != null && destinationSelector.isSelecting)
+        {
+            return;
+        }
+
         if ((IsGrounded()) && (jumpTimes <= 1)){ // for single jump only
             canJump = true;
         }  else {

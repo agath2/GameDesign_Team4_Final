@@ -557,6 +557,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1001 &2870817782475873393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -679,3 +680,5 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1dc43db1a46b4eebbe6df3e9c30b813, type: 3}
+=======
+>>>>>>> parent of 79a7363 (Trampoline!)
