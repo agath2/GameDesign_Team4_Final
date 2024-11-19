@@ -14,6 +14,8 @@ public class RightClickOptions : MonoBehaviour
     public DogMovement dog;
     private GameObject currentFetchable; 
     public float fetchableRange = 4f;
+    public bool useSelector = false;
+
 
     void Start()
     {
@@ -31,26 +33,29 @@ public class RightClickOptions : MonoBehaviour
     {
         optionMenu.SetActive(true);
         optionMenu.transform.position = position;
+        mousePosition = position;
     }
 
     void Update()
     {
-        // Check for right mouse button click
-        if (Input.GetMouseButtonDown(1)) // 1 is the right mouse button
-        {
-            mousePosition = Input.mousePosition;
-
-            // Show the context menu at the mouse position
-            ShowOptionMenu(mousePosition);
-        }
-
-        // Hide the menu when clicking outside of it
-        if (Input.GetMouseButtonDown(0)) // Left mouse button
-        {
-            // Check if the click is outside the context menu
-            if (!RectTransformUtility.RectangleContainsScreenPoint((RectTransform)optionMenu.transform, Input.mousePosition))
+        if (!useSelector) {
+            // Check for right mouse button click
+            if (Input.GetMouseButtonDown(1)) // 1 is the right mouse button
             {
-                optionMenu.SetActive(false);
+                mousePosition = Input.mousePosition;
+
+                // Show the context menu at the mouse position
+                ShowOptionMenu(mousePosition);
+            }
+
+            // Hide the menu when clicking outside of it
+            if (Input.GetMouseButtonDown(0)) // Left mouse button
+            {
+                // Check if the click is outside the context menu
+                if (!RectTransformUtility.RectangleContainsScreenPoint((RectTransform)optionMenu.transform, Input.mousePosition))
+                {
+                    optionMenu.SetActive(false);
+                }
             }
         }
     }
@@ -60,10 +65,18 @@ public class RightClickOptions : MonoBehaviour
     void OnGoHereClicked()
     {
         Debug.Log("Go Here clicked");
-
-        Vector2 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        dog.SetTargetPosition(worldPosition);
-        optionMenu.SetActive(false);
+        if (!useSelector)
+        {
+            Vector2 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            dog.SetTargetPosition(worldPosition);
+            optionMenu.SetActive(false);
+        }
+        else
+        { Vector2 worldPosition = optionMenu.transform.position;
+            dog.SetTargetPosition(worldPosition);
+            optionMenu.SetActive(false);
+        }
+        
     }
 
     void OnFollowClicked()
@@ -82,17 +95,26 @@ public class RightClickOptions : MonoBehaviour
 
     void OnFetchClicked()
     {
-        Debug.Log("Fetch clicked");
+        Vector2 worldPosition;
+        if (!useSelector)
+        {
+            Debug.Log("Fetch clicked");
 
-        // Convert mouse position to world position.
-        Vector2 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            // Convert mouse position to world position.
+            worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        }
+        else
+        {
+            Debug.Log("Fetch clicked");
 
-        // Move the dog to the target position first
-        dog.SetTargetPosition(worldPosition);
+            // Convert mouse position to world position.
+            worldPosition = optionMenu.transform.position;
 
-        // Wait until the dog reaches the target position
-        StartCoroutine(WaitForDogToStop(worldPosition));
-    }
+
+        }
+            dog.SetTargetPosition(worldPosition);
+            StartCoroutine(WaitForDogToStop(worldPosition));
+        }
 
     // Coroutine to wait for the dog to reach the target
     IEnumerator WaitForDogToStop(Vector2 targetPosition)

@@ -115,9 +115,9 @@ public class DestinationSelector : MonoBehaviour
 
         // Convert the destination's world position to screen position for UI alignment
         Vector3 screenPosition = Camera.main.WorldToScreenPoint(selectedDestination.transform.position);
-
+        currentOptionMenu.useSelector = true;
         currentOptionMenu.ShowOptionMenu(screenPosition);
-
+        currentOptionMenu.useSelector = false;
         // Optionally: Exit selection mode
         isSelecting = false;
         ClearHighlights();
