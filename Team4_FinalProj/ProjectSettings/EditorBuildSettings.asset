@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Scenes in Game/TutorialMovement.unity
     guid: 785fcdcddaa22465695fe4d4649ac70c
   - enabled: 1
-    path: Assets/Scenes/Scenes in Game/Tutorial Fetch.unity
+    path: Assets/Scenes/Scenes in Game/TutorialFetch.unity
     guid: a5794c2f6710142a5930399773328791
   - enabled: 1
     path: Assets/Scenes/Scenes in Game/Level1.unity
