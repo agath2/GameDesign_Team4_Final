@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour {
 
+    public GameHandler gameHandlerObj;
     public Animator animator;
     public Rigidbody2D rb2D;
     private bool FaceRight = true; // determine which way player is facing.
@@ -104,5 +105,9 @@ public class PlayerMove : MonoBehaviour {
         }
     }
 
-
+    public void OnTriggerEnter2D(Collider2D collider) {
+        if(collider.gameObject.tag == "Car") {
+            gameHandlerObj.RestartLevel();
+        }
+    }
 }

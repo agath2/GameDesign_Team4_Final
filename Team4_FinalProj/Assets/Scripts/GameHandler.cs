@@ -42,6 +42,11 @@ public class GameHandler : MonoBehaviour
         SceneManager.LoadScene(levelScene); // Reload the level scene
     }
 
+    public void RestartLevel() 
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     // Method to quit the game
     public void QuitGame()
     {

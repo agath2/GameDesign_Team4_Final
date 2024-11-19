@@ -8,7 +8,12 @@ TagManager:
   - WallToggleButton
   - Treat
   - Clickable
+<<<<<<< Updated upstream
   - Fetch
+=======
+  - Trampoline
+  - Car
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
