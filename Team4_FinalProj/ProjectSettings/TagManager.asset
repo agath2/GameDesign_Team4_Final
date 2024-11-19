@@ -8,6 +8,7 @@ TagManager:
   - WallToggleButton
   - Treat
   - Clickable
+  - Fetch
   layers:
   - Default
   - TransparentFX

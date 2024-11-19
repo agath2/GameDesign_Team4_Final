@@ -31,6 +31,7 @@ public class DogMovement : MonoBehaviour
         mapManager = FindObjectOfType<MapManager>();
     }
 
+
     void Update()
     {
 
@@ -49,6 +50,18 @@ public class DogMovement : MonoBehaviour
         else if (followPlayer)
         {
             HandlePlayerFollowing();
+        }
+    }
+
+    public bool isStopped()
+    {
+        if (!moveToTarget && !followPlayer)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
