@@ -28,13 +28,13 @@ public class RightClickOptions : MonoBehaviour
     void Update()
     {
         // Check for right mouse button click
-       // if (Input.GetMouseButtonDown(1)) // 1 is the right mouse button
-       // {
-       //     mousePosition = Input.mousePosition;
+        if (Input.GetMouseButtonDown(1)) // 1 is the right mouse button
+        {
+            mousePosition = Input.mousePosition;
 
-       //     // Show the context menu at the mouse position
-       //     ShowOptionMenu(mousePosition);
-       // }
+            // Show the context menu at the mouse position
+            ShowOptionMenu(mousePosition);
+        }
 
         // Hide the menu when clicking outside of it
         if (Input.GetMouseButtonDown(0)) // Left mouse button
