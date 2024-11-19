@@ -3,17 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Ladder
-  - WallToggleButton
-  - Treat
-  - Clickable
-<<<<<<< Updated upstream
-  - Fetch
-=======
-  - Trampoline
-  - Car
->>>>>>> Stashed changes
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -21,10 +11,10 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
-  - Enemies
-  - Player
-  - Treat
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

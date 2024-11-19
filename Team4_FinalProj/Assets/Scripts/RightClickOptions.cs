@@ -104,7 +104,6 @@ public class RightClickOptions : MonoBehaviour
         {
             yield return null; // Wait for one frame
         }
-
         // Now the dog has stopped moving, check for fetchable objects
         CheckForNearbyFetchable();
     }
