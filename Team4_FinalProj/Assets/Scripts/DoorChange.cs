@@ -7,7 +7,7 @@ public class DoorChange : MonoBehaviour
      public GameObject doorOpened;
      public GameObject doorLocked;
     // public GameObject msgNeedKey;
-    public string NextLevel = "StartMenu";
+    public string NextLevel = "StartMen";
     public AudioClip DoorOpen;
     public bool isLocked = true;
 

@@ -13,7 +13,6 @@ public class RightClickOptions : MonoBehaviour
     private Vector2 mousePosition;
     public DogMovement dog;
     private GameObject currentFetchable; 
-    private bool isNearFetchable = false; 
     public float fetchableRange = 4f;
 
     void Start()
@@ -26,6 +25,12 @@ public class RightClickOptions : MonoBehaviour
         followButton.onClick.AddListener(OnFollowClicked);
         stayButton.onClick.AddListener(OnStayClicked);
         fetchButton.onClick.AddListener(OnFetchClicked);
+    }
+
+    public void ShowOptionMenu(Vector2 position)
+    {
+        optionMenu.SetActive(true);
+        optionMenu.transform.position = position;
     }
 
     void Update()
@@ -50,11 +55,7 @@ public class RightClickOptions : MonoBehaviour
         }
     }
 
-    void ShowOptionMenu(Vector2 position)
-    {
-        optionMenu.SetActive(true);
-        optionMenu.transform.position = position;
-    }
+
 
     void OnGoHereClicked()
     {
