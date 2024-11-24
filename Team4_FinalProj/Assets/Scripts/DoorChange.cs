@@ -17,7 +17,7 @@ public class DoorChange : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other)
     {
         // Check if the object colliding with the door is the "Fetch" (key)
-        if (other.gameObject.CompareTag("Fetch"))
+        if (other.gameObject.CompareTag("Key"))
         {
             hasKey = true;
             Destroy(other.gameObject);  // Destroy the key (since it's collected)

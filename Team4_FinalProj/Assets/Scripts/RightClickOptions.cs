@@ -134,7 +134,15 @@ public class RightClickOptions : MonoBehaviour
     void CheckForNearbyFetchable()
     {
         // Get all objects with the "Fetch" tag in the scene
-        GameObject[] fetchables = GameObject.FindGameObjectsWithTag("Fetch");
+        GameObject[] fetch = GameObject.FindGameObjectsWithTag("Fetch");
+
+        // Get all objects with the "Key" tag
+        GameObject[] keys = GameObject.FindGameObjectsWithTag("Key");
+
+        // Combine both arrays into a single list
+        GameObject[] fetchables = new GameObject[fetch.Length + keys.Length];
+        fetch.CopyTo(fetchables, 0);
+        keys.CopyTo(fetchables, fetchables.Length);
 
         // Iterate through each fetchable item
         foreach (GameObject fetchable in fetchables)
