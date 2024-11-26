@@ -142,7 +142,7 @@ public class RightClickOptions : MonoBehaviour
         // Combine both arrays into a single list
         GameObject[] fetchables = new GameObject[fetch.Length + keys.Length];
         fetch.CopyTo(fetchables, 0);
-        keys.CopyTo(fetchables, fetchables.Length);
+        keys.CopyTo(fetchables, fetch.Length);
 
         // Iterate through each fetchable item
         foreach (GameObject fetchable in fetchables)

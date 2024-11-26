@@ -6,7 +6,7 @@ public class WallToggle : MonoBehaviour
 {
     public int channel = 0;
     public bool startOn = true;
-    private bool toggledOn = true;
+    public bool toggledOn = true;
     public GameObject wallUp;
     public GameObject wallDown;
 

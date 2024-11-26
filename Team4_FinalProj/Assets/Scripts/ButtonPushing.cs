@@ -9,6 +9,7 @@ public class WallToggleButton : MonoBehaviour
     public GameObject buttonUp;
     public GameObject buttonDown;
     public AudioSource ButtonPressAudio;
+    public bool player_can_press = false;
 
     private bool pressed = false;
     private bool setup = true;
@@ -34,7 +35,7 @@ public class WallToggleButton : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player" || collision.gameObject.name == "Dog")
+        if (collision is BoxCollider2D && (collision.gameObject.name == "Dog" || player_can_press))
         {
             Debug.Log("Button pushed");
             pressed = true;
@@ -51,7 +52,7 @@ public class WallToggleButton : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player" || collision.gameObject.name == "Dog")
+        if (collision is BoxCollider2D && (collision.gameObject.name == "Dog" || player_can_press))
         {
             Debug.Log("Button un pushed");
             pressed = false;
