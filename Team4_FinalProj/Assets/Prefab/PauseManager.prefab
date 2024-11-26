@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0d24d70c841f4754a6ac1391de9daeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 8697367618622137492, guid: 1e38b73df12a840c199a59b30bd32aae, type: 3}
+  panel: {fileID: 8255027782236448314, guid: cec8dcf14b9e545b58cc6df7a00c6779, type: 3}
+  mixer: {fileID: 0}

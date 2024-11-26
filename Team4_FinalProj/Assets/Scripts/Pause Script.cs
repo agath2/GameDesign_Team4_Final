@@ -1,68 +1,61 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Required for scene management
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.UI;
-using UnityEngine.Audio;
+using UnityEngine.SceneManagement;  // To manage scene loading
 
-public class PanelController : MonoBehaviour
+public class PauseMenuController : MonoBehaviour
 {
-    private const string introScene = "StartScene"; // Your intro scene name
-    public GameObject panel; // Reference to the panel
-    private bool isPanelActive = false;
-    public AudioMixer mixer;
-    public static float volumeLevel = 1.0f;
-    private Slider sliderVolumeCtrl;
+    public GameObject pauseMenuPanel;  // Reference to the pause menu panel
+    private bool isPaused = false;     // Track if the game is paused
 
-    void Awake(){
-        panel.SetActive(true); // so slider can be set
-        SetLevel (volumeLevel);
-        GameObject sliderTemp = GameObject.FindWithTag("VolumeSlider");
-        if (sliderTemp != null){
-            sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
-            sliderVolumeCtrl.value = volumeLevel;
+    // Start is called before the first frame update
+    void Start()
+    {
+        // Make sure the pause menu is hidden at the start of the game
+        pauseMenuPanel.SetActive(false);
+    }
+
+    // Function to toggle the pause menu
+    public void TogglePauseMenu()
+    {
+        if (isPaused)
+        {
+            ResumeGame();  // If game is paused, resume
+        }
+        else
+        {
+            PauseGame();  // If game is running, pause
         }
     }
 
-    void Start(){
-        panel.SetActive(false);
-        isPanelActive = false;
-    }
-
-    public void SetLevel(float sliderValue){
-        mixer.SetFloat("MusicVolume", Mathf.Log10 (sliderValue) * 20);
-        volumeLevel = sliderValue;
-    }
-
-    public void TogglePanel()
+    // Pause the game and show the pause menu
+    public void PauseGame()
     {
-        isPanelActive = !isPanelActive;
-        panel.SetActive(isPanelActive);
-
-        // Pause or resume the game time based on panel state
-        Time.timeScale = isPanelActive ? 0 : 1;
+        isPaused = true;
+        pauseMenuPanel.SetActive(true);  // Show the pause menu
+        Time.timeScale = 0f;  // Pause the game (stops all game physics and time-based actions)
     }
 
+    // Resume the game and hide the pause menu
     public void ResumeGame()
     {
-        // Hide the panel and resume time
-        isPanelActive = false;
-        panel.SetActive(false);
-        Time.timeScale = 1; // Resume the game
-    }
-    // Method to restart the game
-    public void GoBackToStart()
-    {
-        SceneManager.LoadScene(introScene); // Load the intro scene
+        isPaused = false;
+        pauseMenuPanel.SetActive(false);  // Hide the pause menu
+        Time.timeScale = 1f;  // Resume the game (restore normal time flow)
     }
 
-    // Method to quit the game
+    // Restart the game by reloading the current scene
+    public void RestartGame()
+    {
+        Time.timeScale = 1f;  // Ensure the game time is resumed before restarting
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);  // Reload the current scene
+    }
+
+    // Function to quit the game (optional)
     public void QuitGame()
     {
         #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
+            UnityEditor.EditorApplication.isPlaying = false;  // Stop play mode in editor
         #else
-                Application.Quit();
+            Application.Quit();  // Quit the game when built
         #endif
     }
 }
