@@ -87,15 +87,27 @@ public class PlayerMove : MonoBehaviour {
         spriteRenderer.flipX = !FaceRight;
     }
 
-    public void OnTriggerStay2D(Collider2D collider) {
-        if(collider.gameObject.tag == "Ladder" && Input.GetKey(KeyCode.W)) {
-            Debug.Log("Collide with ladder");
-            rb2D.velocity = new Vector2(0f, 10f);
-        } else if(collider.gameObject.tag == "Ladder" && Input.GetKey(KeyCode.S)) {
-            Debug.Log("Collide with ladder");
-            rb2D.velocity = new Vector2(0f, -10f);
-        } else if(collider.gameObject.tag == "Ladder" && Input.GetKey(KeyCode.S)) {
-            rb2D.velocity = new Vector2(0f, 0f);
+    public void OnTriggerStay2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("Ladder"))
+        {
+            float verticalInput = Input.GetAxis("Vertical"); // Use "Vertical" from Input Manager
+
+            if (verticalInput > 0)
+            { // Pressing up
+                Debug.Log("Climbing up the ladder");
+                rb2D.velocity = new Vector2(0f, 10f);
+            }
+            else if (verticalInput < 0)
+            { // Pressing down
+                Debug.Log("Climbing down the ladder");
+                rb2D.velocity = new Vector2(0f, -10f);
+            }
+            else
+            {
+                // No movement
+                rb2D.velocity = new Vector2(0f, 0f);
+            }
         }
     }
 
