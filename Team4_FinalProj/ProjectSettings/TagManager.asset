@@ -11,6 +11,9 @@ TagManager:
   - Key
   - VolumeSlider
   - Trampoline
+  - Clickable
+  - Car
+  - PauseMenuSlider
   layers:
   - Default
   - TransparentFX

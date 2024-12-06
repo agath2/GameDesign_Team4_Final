@@ -1,16 +1,44 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;  // To manage scene loading
+using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class PauseMenuController : MonoBehaviour
 {
     public GameObject pauseMenuPanel;  // Reference to the pause menu panel
     private bool isPaused = false;     // Track if the game is paused
+    public AudioMixer mixer;
+    public static float volumeLevel = 1.0f;
+    private Slider sliderVolumeCtrl;
+
+    void Awake(){
+        pauseMenuPanel.SetActive(true); // so slider can be set
+        SetLevel (volumeLevel);
+        GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
+        if (sliderTemp != null){
+            sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
+            sliderVolumeCtrl.value = volumeLevel;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         // Make sure the pause menu is hidden at the start of the game
         pauseMenuPanel.SetActive(false);
+        isPaused = false;
+    }
+
+    void Update(){
+        if (Input.GetKeyDown(KeyCode.Escape)){
+            TogglePauseMenu();
+        }
+    }
+
+    // Set volume level
+    public void SetLevel(float sliderValue){
+        mixer.SetFloat("MusicVolume", Mathf.Log10 (sliderValue) * 20);
+        volumeLevel = sliderValue;
     }
 
     // Function to toggle the pause menu
