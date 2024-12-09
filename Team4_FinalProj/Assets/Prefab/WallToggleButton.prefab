@@ -53,6 +53,7 @@ MonoBehaviour:
   buttonUp: {fileID: 8866515238015360168}
   buttonDown: {fileID: 7865687760654277729}
   ButtonPressAudio: {fileID: 0}
+  player_can_press: 0
 --- !u!70 &633866129673239304
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -85,8 +86,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000040734328, y: -0.34170434}
-  m_Size: {x: 1.0000001, y: 0.31659356}
+  m_Offset: {x: -0.031410176, y: -0.6243985}
+  m_Size: {x: 1.7747934, y: 0.7144647}
   m_Direction: 1
 --- !u!82 &3357047812731601845
 AudioSource:
