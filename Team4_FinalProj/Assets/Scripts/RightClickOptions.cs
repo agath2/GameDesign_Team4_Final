@@ -15,6 +15,7 @@ public class RightClickOptions : MonoBehaviour
     private GameObject currentFetchable; 
     public float fetchableRange = 4f;
     public bool useSelector = false;
+    public AudioSource DogBarkCommandAudio;
 
 
     void Start()
@@ -65,6 +66,7 @@ public class RightClickOptions : MonoBehaviour
     void OnGoHereClicked()
     {
         Debug.Log("Go Here clicked");
+        DogBarkCommandAudio.Play();
         if (!useSelector)
         {
             Vector2 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -83,6 +85,7 @@ public class RightClickOptions : MonoBehaviour
     {
         Debug.Log("Follow clicked");
         dog.Follow();
+        DogBarkCommandAudio.Play();
         optionMenu.SetActive(false);
     }
 
@@ -90,6 +93,7 @@ public class RightClickOptions : MonoBehaviour
     {
         Debug.Log("Stay clicked");
         dog.Stay();
+        DogBarkCommandAudio.Play();
         optionMenu.SetActive(false);
     }
 
@@ -112,6 +116,8 @@ public class RightClickOptions : MonoBehaviour
 
 
         }
+            DogBarkCommandAudio.Play();
+            optionMenu.SetActive(false);
             dog.SetTargetPosition(worldPosition);
             StartCoroutine(WaitForDogToStop(worldPosition));
         }
