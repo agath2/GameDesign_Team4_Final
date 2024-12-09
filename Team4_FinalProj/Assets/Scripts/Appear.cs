@@ -29,14 +29,12 @@ public class Appear : MonoBehaviour
     {
         mainPanel.SetActive(true); // Show the canvas
         StartCoroutine(Fade(canvasGroup, fadeDelay, true)); // Fade In
-        Debug.Log("Show");
     }
 
     // Called when the Collider2D exits the trigger zone
     private void OnTriggerExit2D(Collider2D other)
     {
         StartCoroutine(FadeAndHide(canvasGroup, fadeDelay)); // Fade Out and Hide
-        Debug.Log("Hide");
     }
 
     IEnumerator Fade(CanvasGroup canvasGroup, float fadeTime, bool fadeIn)

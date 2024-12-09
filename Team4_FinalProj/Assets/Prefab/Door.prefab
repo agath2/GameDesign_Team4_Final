@@ -26,14 +26,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491420486532658608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.37, y: 8.4, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2012839438308921153}
   - {fileID: 6640010951627554871}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2017736135976079247
 MonoBehaviour:
@@ -49,9 +49,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorOpened: {fileID: 4054151729281532355}
   doorLocked: {fileID: 3456760972332252680}
-  msgNeedKey: {fileID: 0}
   NextLevel: StartScene
   DoorOpen: {fileID: 8300000, guid: f5e394ca5110648e89c014cd6bbc9717, type: 3}
+  isLocked: 1
+  hasKey: 0
 --- !u!61 &3902406311848341226
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -84,7 +85,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0.028188229, y: -0.121661425}
+  m_Offset: {x: 0.17637655, y: -0.18517065}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -95,7 +96,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.2700357, y: 2.5741754}
+  m_Size: {x: 1.973659, y: 3.590324}
   m_EdgeRadius: 0
 --- !u!1 &3456760972332252680
 GameObject:

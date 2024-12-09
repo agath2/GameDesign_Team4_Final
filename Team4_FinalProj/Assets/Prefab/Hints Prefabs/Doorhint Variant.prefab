@@ -1,0 +1,175 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1059272251110346873
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2168191467219424932, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_Size.x
+      value: 11.294859
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168191467219424932, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_Size.y
+      value: 7.2710567
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168191467219424932, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.8773432
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168191467219424932, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.03883481
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 15.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 18.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993629749403009408, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993629749403009408, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 5980214041442314070, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_text
+      value: Walk into the door to enter the next scene.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5980214041442314070, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_margin.x
+      value: -2.532121
+      objectReference: {fileID: 0}
+    - target: {fileID: 5980214041442314070, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_margin.y
+      value: -1.7730067
+      objectReference: {fileID: 0}
+    - target: {fileID: 5980214041442314070, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_margin.z
+      value: 0.105508804
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258539200140286253, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_text
+      value: Walk into the door to enter the next scene.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258539200140286253, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_margin.z
+      value: -0.8835411
+      objectReference: {fileID: 0}
+    - target: {fileID: 6992823107052408050, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5.9489717
+      objectReference: {fileID: 0}
+    - target: {fileID: 6992823107052408050, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.6600037
+      objectReference: {fileID: 0}
+    - target: {fileID: 6992823107052408050, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6992823107052408050, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 7491974590582525204, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_Name
+      value: Doorhint Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8351676250226721996, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8351676250226721996, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.07
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
