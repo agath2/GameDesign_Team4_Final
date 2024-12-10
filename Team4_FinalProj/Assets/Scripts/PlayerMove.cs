@@ -2,14 +2,14 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 
-public class PlayerMove : MonoBehaviour {
+public class PlayerMove : MonoBehaviour
+{
 
     public GameHandler gameHandlerObj;
     public Animator animator;
     public Rigidbody2D rb2D;
     private bool FaceRight = true; // determine which way player is facing.
-    public static float runSpeed = 10f;
-    public float startSpeed = 10f;
+    public static float runSpeed = 6f;
     public bool isAlive = true;
     //public AudioSource WalkSFX;
     private Vector3 hMove;
@@ -18,17 +18,19 @@ public class PlayerMove : MonoBehaviour {
     private DestinationSelector destinationSelector;
     private RightClickOptions RightClick;
 
-    void Start(){
+    void Start()
+    {
         destinationSelector = FindObjectOfType<DestinationSelector>();
         RightClick = FindObjectOfType<RightClickOptions>();
 
-        
+
         animator = gameObject.GetComponentInChildren<Animator>();
         rb2D = transform.GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
-    void Update(){
+    void Update()
+    {
         // Prevent movement if in selection mode
         if ((destinationSelector != null && destinationSelector.isSelecting))
         {
@@ -41,7 +43,8 @@ public class PlayerMove : MonoBehaviour {
         //NOTE: Horizontal axis: [a] / left arrow is -1, [d] / right arrow is 1
         hMove = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
 
-        if (isAlive == true){
+        if (isAlive == true)
+        {
             transform.position += hMove * runSpeed * Time.deltaTime;
 
             animator.SetFloat("xVelocity", Mathf.Abs(hMove.x));
@@ -64,23 +67,55 @@ public class PlayerMove : MonoBehaviour {
             //     // FlipPlayer();
             // }
 
-            if (hMove.x < 0 && FaceRight) {
+            if (hMove.x < 0 && FaceRight)
+            {
                 playerTurn();
             }
-            else if (hMove.x > 0 && !FaceRight) {
+            else if (hMove.x > 0 && !FaceRight)
+            {
                 playerTurn();
             }
         }
     }
+    public LayerMask groundLayer; // Assign this in the Inspector
+    public float slopeCheckDistance = 0.5f;
+    private float slopeDownAngle;
+    private Vector2 slopeNormalPerp;
+    private bool isOnSlope;
 
-    void FixedUpdate(){
-        //slow down on hills / stops sliding from velocity
-        if (hMove.x == 0){
-            rb2D.velocity = new Vector2(rb2D.velocity.x / 1.1f, rb2D.velocity.y) ;
+    void SlopeCheck()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, slopeCheckDistance, groundLayer);
+
+        if (hit)
+        {
+            slopeNormalPerp = Vector2.Perpendicular(hit.normal).normalized;
+            slopeDownAngle = Vector2.Angle(hit.normal, Vector2.up);
+
+            isOnSlope = slopeDownAngle != 0;
+        }
+        else
+        {
+            isOnSlope = false;
         }
     }
 
-    private void playerTurn(){
+    void FixedUpdate()
+    {
+        SlopeCheck();
+
+        if (isOnSlope && hMove.x != 0)
+        {
+            rb2D.velocity = new Vector2(runSpeed * slopeNormalPerp.x * Mathf.Sign(hMove.x), runSpeed * slopeNormalPerp.y);
+        }
+        else
+        {
+            rb2D.velocity = new Vector2(hMove.x * runSpeed, rb2D.velocity.y);
+        }
+    }
+
+    private void playerTurn()
+    {
         // NOTE: Switch player facing label
         FaceRight = !FaceRight;
 
@@ -115,14 +150,18 @@ public class PlayerMove : MonoBehaviour {
         }
     }
 
-    public void OnTriggerExit2D(Collider2D collider) {
-        if(collider.gameObject.tag == "Ladder") {
+    public void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Ladder")
+        {
             rb2D.velocity = new Vector2(0f, 0f);
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D collider) {
-        if(collider.gameObject.tag == "Car") {
+    public void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Car")
+        {
             gameHandlerObj.RestartLevel();
         }
     }

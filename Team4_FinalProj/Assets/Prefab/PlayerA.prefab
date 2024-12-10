@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872477534589742272}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.94, y: -6.3, z: 0}
+  m_LocalPosition: {x: -0.82, y: -6.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -89,10 +89,13 @@ MonoBehaviour:
   gameHandlerObj: {fileID: 0}
   animator: {fileID: 0}
   rb2D: {fileID: 4530673808618382480}
-  startSpeed: 10
   isAlive: 1
   ClimbingSpeed: 1
   spriteRenderer: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  slopeCheckDistance: 0.5
 --- !u!114 &3520728102149652643
 MonoBehaviour:
   m_ObjectHideFlags: 0
