@@ -14,10 +14,14 @@ public class PlayerJump : MonoBehaviour {
     public int jumpTimes = 0;
     public bool isAlive = true;
     private DestinationSelector destinationSelector;
+    private RightClickOptions RightClick;
+
 
     //public AudioSource JumpSFX;
 
     void Start(){
+        RightClick = FindObjectOfType<RightClickOptions>();
+
         destinationSelector = FindObjectOfType<DestinationSelector>();
 
         anim = gameObject.GetComponentInChildren<Animator>();
@@ -31,6 +35,10 @@ public class PlayerJump : MonoBehaviour {
         }
 
         if (destinationSelector != null && destinationSelector.isSelecting)
+        {
+            return;
+        }
+        if ((RightClick != null && RightClick.isMenuActive))
         {
             return;
         }

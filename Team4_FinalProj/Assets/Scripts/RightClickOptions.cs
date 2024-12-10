@@ -66,7 +66,7 @@ public class RightClickOptions : MonoBehaviour
         }
     }
 
-    void OnGoHereClicked()
+    public void OnGoHereClicked()
     {
         Debug.Log("Go Here clicked");
         DogBarkCommandAudio.Play();
@@ -87,7 +87,7 @@ public class RightClickOptions : MonoBehaviour
         CloseOptionMenu();
     }
 
-    void OnFollowClicked()
+    public void OnFollowClicked()
     {
         Debug.Log("Follow clicked");
         dog.Follow();
@@ -95,7 +95,7 @@ public class RightClickOptions : MonoBehaviour
         CloseOptionMenu();
     }
 
-    void OnStayClicked()
+    public void OnStayClicked()
     {
         Debug.Log("Stay clicked");
         dog.Stay();
@@ -103,7 +103,7 @@ public class RightClickOptions : MonoBehaviour
         CloseOptionMenu();
     }
 
-    void OnFetchClicked()
+    public void OnFetchClicked()
     {
         Vector2 worldPosition;
         if (!useSelector)

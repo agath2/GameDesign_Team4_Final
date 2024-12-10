@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4451952385858902040}
   - component: {fileID: 5311334001839888519}
   - component: {fileID: 4324365126087517862}
+  - component: {fileID: 6956997456167296089}
   m_Layer: 5
   m_Name: FetchButton
   m_TagString: Untagged
@@ -121,7 +122,48 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5311334001839888519}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 608184183406935832}
+        m_TargetAssemblyTypeName: RightClickOptions, Assembly-CSharp
+        m_MethodName: OnFetchClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6956997456167296089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244518335802435135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 15
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 608184183406935832}
+          m_TargetAssemblyTypeName: RightClickOptions, Assembly-CSharp
+          m_MethodName: OnFetchClicked
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &3495552502180266075
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,6 +290,7 @@ MonoBehaviour:
   fetchableRange: 4
   useSelector: 0
   DogBarkCommandAudio: {fileID: 7800519511277217228}
+  isMenuActive: 0
 --- !u!1 &3666714291438662173
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,6 +438,7 @@ GameObject:
   - component: {fileID: 916590909390014719}
   - component: {fileID: 5298072069745955596}
   - component: {fileID: 5518092833322605166}
+  - component: {fileID: 690203848817732392}
   m_Layer: 5
   m_Name: FollowButton
   m_TagString: Untagged
@@ -504,7 +548,48 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5298072069745955596}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 608184183406935832}
+        m_TargetAssemblyTypeName: RightClickOptions, Assembly-CSharp
+        m_MethodName: OnFollowClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &690203848817732392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3854195348634028624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 15
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 608184183406935832}
+          m_TargetAssemblyTypeName: RightClickOptions, Assembly-CSharp
+          m_MethodName: OnFollowClicked
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &4150888510614126512
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +602,7 @@ GameObject:
   - component: {fileID: 7420113947465705863}
   - component: {fileID: 4631114106943008023}
   - component: {fileID: 6078417043034122811}
+  - component: {fileID: 2858834623894243683}
   m_Layer: 5
   m_Name: StayButton
   m_TagString: Untagged
@@ -626,7 +712,48 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4631114106943008023}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 608184183406935832}
+        m_TargetAssemblyTypeName: RightClickOptions, Assembly-CSharp
+        m_MethodName: OnStayClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2858834623894243683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4150888510614126512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 15
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 608184183406935832}
+          m_TargetAssemblyTypeName: RightClickOptions, Assembly-CSharp
+          m_MethodName: OnStayClicked
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &4184986913368668859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,6 +1379,7 @@ GameObject:
   - component: {fileID: 7431922803582261501}
   - component: {fileID: 2926382213489235533}
   - component: {fileID: 1581304489844687998}
+  - component: {fileID: 7710045695971250432}
   m_Layer: 5
   m_Name: GoHereButton
   m_TagString: Untagged
@@ -1361,4 +1489,45 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2926382213489235533}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 608184183406935832}
+        m_TargetAssemblyTypeName: RightClickOptions, Assembly-CSharp
+        m_MethodName: OnGoHereClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7710045695971250432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7718891020033235304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 15
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 608184183406935832}
+          m_TargetAssemblyTypeName: RightClickOptions, Assembly-CSharp
+          m_MethodName: OnGoHereClicked
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

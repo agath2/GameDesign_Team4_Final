@@ -42,12 +42,6 @@ public class InputChecker : MonoBehaviour
             }
         }
 
-        // Fallback to keyboard input if no controller input is detected
-        if (Input.anyKey)
-        {
-            return "Keyboard";
-        }
-
         // Default to the last known input method if no input is detected
         return lastInputMethod;
     }
