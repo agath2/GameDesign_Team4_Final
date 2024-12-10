@@ -25,6 +25,11 @@ public class PlayerJump : MonoBehaviour {
     }
 
     void Update() {
+        if (Input.GetButtonDown("Jump"))
+        {
+            Debug.Log("Jump button pressed!");
+        }
+
         if (destinationSelector != null && destinationSelector.isSelecting)
         {
             return;

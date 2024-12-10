@@ -3,8 +3,8 @@ using TMPro;
 
 public class InputChecker : MonoBehaviour
 {
-     public TextMeshProUGUI keyboardText;  // Text for keyboard input
-     public TextMeshProUGUI controllerText; // Text for controller input
+    public TextMeshProUGUI keyboardText;   // Text for keyboard input
+    public TextMeshProUGUI controllerText; // Text for controller input
 
     private string lastInputMethod = "Keyboard"; // Tracks the last detected input method
 
@@ -27,13 +27,15 @@ public class InputChecker : MonoBehaviour
 
     private string DetectInputMethod()
     {
-        // Detect if a controller is connected
+        // Check if any joystick is connected
         foreach (string joystick in Input.GetJoystickNames())
         {
             if (!string.IsNullOrEmpty(joystick))
             {
-                // If controller input is detected, return "Controller"
-                if (Input.GetKey("joystick button0") || Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+                // Check for any controller input (axis movement or button press)
+                if (Input.GetAxis("Horizontal") != 0 ||
+                    Input.GetAxis("Vertical") != 0 ||
+                    Input.anyKeyDown) // Detect any button press
                 {
                     return "Controller";
                 }
@@ -52,7 +54,7 @@ public class InputChecker : MonoBehaviour
 
     private void UpdateTextDisplay()
     {
-        // Update visibility of the text objects
+        // Update visibility of the text objects based on the input method
         if (lastInputMethod == "Keyboard")
         {
             keyboardText.gameObject.SetActive(true);

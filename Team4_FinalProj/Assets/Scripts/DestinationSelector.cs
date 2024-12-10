@@ -7,38 +7,72 @@ public class DestinationSelector : MonoBehaviour
     private int currentIndex = 0;
     public bool isSelecting = false;
     public RightClickOptions currentOptionMenu; // Reference to the currently active options menu instance
+    private bool canMoveHorizontally = true;
 
     private void Start()
     {
         GameObject[] allDestinations = GameObject.FindGameObjectsWithTag("Clickable");
         ClearHighlights();
     }
+
     void Update()
     {
-        // Activate Selection Mode
-        if (Input.GetKeyDown(KeyCode.Q))
+        // Toggle selection mode on or off with the Fire1 button
+        if (Input.GetButtonDown("Fire1"))
         {
-            ActivateSelectionMode();
+            if (isSelecting)
+            {
+                DeactivateSelectionMode();
+            }
+            else
+            {
+                ActivateSelectionMode();
+            }
         }
 
         // Only proceed if in selection mode
         if (isSelecting)
         {
-            // Cycle through destinations with arrow keys
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            HandleSelectionInput();
+        }
+    }
+
+    private void DeactivateSelectionMode()
+    {
+        // Exit selection mode and clear highlights
+        isSelecting = false;
+        ClearHighlights();
+    }
+
+    private void HandleSelectionInput()
+    {
+        Debug.Log("in here");
+        // Handle horizontal input for cycling through destinations
+        float horizontalInput = Input.GetAxis("Horizontal");
+
+        if (canMoveHorizontally)
+        {
+            if (horizontalInput > 0.5f)
             {
                 SelectNextDestination();
+                canMoveHorizontally = false;
             }
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            else if (horizontalInput < -0.5f)
             {
                 SelectPreviousDestination();
+                canMoveHorizontally = false;
             }
+        }
+        else if (Mathf.Abs(horizontalInput) < 0.1f)
+        {
+            // Reset the flag when the horizontal input returns to neutral
+            canMoveHorizontally = true;
+        }
 
-            // Confirm selection and open options menu
-            if (Input.GetKeyDown(KeyCode.E)) // 'Go' button
-            {
-                OpenOptionsMenu();
-            }
+        // Confirm selection and open options menu with the Submit button
+        if (Input.GetButtonDown("Submit"))
+        {
+            OpenOptionsMenu();
         }
     }
 
@@ -110,7 +144,6 @@ public class DestinationSelector : MonoBehaviour
 
     private void OpenOptionsMenu()
     {
-
         GameObject selectedDestination = destinations[currentIndex];
 
         // Convert the destination's world position to screen position for UI alignment
@@ -118,10 +151,12 @@ public class DestinationSelector : MonoBehaviour
         currentOptionMenu.useSelector = true;
         currentOptionMenu.ShowOptionMenu(screenPosition);
         currentOptionMenu.useSelector = false;
+
         // Optionally: Exit selection mode
         isSelecting = false;
         ClearHighlights();
     }
+
     private void ClearHighlights()
     {
         // Remove highlights from all destinations

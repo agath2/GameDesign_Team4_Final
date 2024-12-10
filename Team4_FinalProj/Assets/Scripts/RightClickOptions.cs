@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-
 public class RightClickOptions : MonoBehaviour
 {
     public GameObject optionMenu;
@@ -12,11 +11,12 @@ public class RightClickOptions : MonoBehaviour
     public Button fetchButton;
     private Vector2 mousePosition;
     public DogMovement dog;
-    private GameObject currentFetchable; 
+    private GameObject currentFetchable;
     public float fetchableRange = 4f;
     public bool useSelector = false;
     public AudioSource DogBarkCommandAudio;
 
+    public bool isMenuActive = false;
 
     void Start()
     {
@@ -32,19 +32,22 @@ public class RightClickOptions : MonoBehaviour
 
     public void ShowOptionMenu(Vector2 position)
     {
+        // Set the menu to active and stop the dog from moving
         optionMenu.SetActive(true);
+        isMenuActive = true;
         optionMenu.transform.position = position;
         mousePosition = position;
     }
 
     void Update()
     {
-        if (!useSelector) {
+        if (!useSelector)
+        {
             // Check for right mouse button click
             if (Input.GetMouseButtonDown(1)) // 1 is the right mouse button
             {
                 mousePosition = Input.mousePosition;
-
+                Debug.Log("MEE");
                 // Show the context menu at the mouse position
                 ShowOptionMenu(mousePosition);
             }
@@ -55,30 +58,19 @@ public class RightClickOptions : MonoBehaviour
                 // Check if the click is outside the context menu
                 if (!RectTransformUtility.RectangleContainsScreenPoint((RectTransform)optionMenu.transform, Input.mousePosition))
                 {
-                    optionMenu.SetActive(false);
+                    CloseOptionMenu();
                 }
             }
         }
     }
 
-
-
     void OnGoHereClicked()
     {
         Debug.Log("Go Here clicked");
         DogBarkCommandAudio.Play();
-        if (!useSelector)
-        {
-            Vector2 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            dog.SetTargetPosition(worldPosition);
-            optionMenu.SetActive(false);
-        }
-        else
-        { Vector2 worldPosition = optionMenu.transform.position;
-            dog.SetTargetPosition(worldPosition);
-            optionMenu.SetActive(false);
-        }
-        
+        Vector2 worldPosition = optionMenu.transform.position;
+        dog.SetTargetPosition(worldPosition);
+        CloseOptionMenu();
     }
 
     void OnFollowClicked()
@@ -86,7 +78,7 @@ public class RightClickOptions : MonoBehaviour
         Debug.Log("Follow clicked");
         dog.Follow();
         DogBarkCommandAudio.Play();
-        optionMenu.SetActive(false);
+        CloseOptionMenu();
     }
 
     void OnStayClicked()
@@ -94,7 +86,7 @@ public class RightClickOptions : MonoBehaviour
         Debug.Log("Stay clicked");
         dog.Stay();
         DogBarkCommandAudio.Play();
-        optionMenu.SetActive(false);
+        CloseOptionMenu();
     }
 
     void OnFetchClicked()
@@ -113,14 +105,12 @@ public class RightClickOptions : MonoBehaviour
 
             // Convert mouse position to world position.
             worldPosition = optionMenu.transform.position;
-
-
         }
-            DogBarkCommandAudio.Play();
-            optionMenu.SetActive(false);
-            dog.SetTargetPosition(worldPosition);
-            StartCoroutine(WaitForDogToStop(worldPosition));
-        }
+        DogBarkCommandAudio.Play();
+        CloseOptionMenu();
+        dog.SetTargetPosition(worldPosition);
+        StartCoroutine(WaitForDogToStop(worldPosition));
+    }
 
     // Coroutine to wait for the dog to reach the target
     IEnumerator WaitForDogToStop(Vector2 targetPosition)
@@ -134,8 +124,6 @@ public class RightClickOptions : MonoBehaviour
         // Now the dog has stopped moving, check for fetchable objects
         CheckForNearbyFetchable();
     }
-
-
 
     void CheckForNearbyFetchable()
     {
@@ -184,5 +172,11 @@ public class RightClickOptions : MonoBehaviour
         }
 
         Debug.Log("No fetchable objects within range.");
+    }
+
+    void CloseOptionMenu()
+    {
+        optionMenu.SetActive(false);
+        isMenuActive = false;
     }
 }

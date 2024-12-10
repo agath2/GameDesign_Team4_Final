@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Collections;
 using UnityEngine;
 
 public class WallToggle : MonoBehaviour
@@ -15,18 +13,10 @@ public class WallToggle : MonoBehaviour
         wallUp.SetActive(true);
         wallDown.SetActive(false);
 
-        GameObject[] buttonArr = GameObject.FindGameObjectsWithTag("WallToggleButton");
-        foreach (GameObject button in buttonArr)
+        if (!startOn)
         {
-            if (button.GetComponent<WallToggleButton>().channel == channel)
-            {
-                button.GetComponent<WallToggleButton>().wallList.Add(this);
-            }
+            ToggleState();
         }
-
-        if (!startOn) { ToggleState(); }
-
-   
     }
 
     public void ToggleState()

@@ -16,13 +16,13 @@ public class PlayerMove : MonoBehaviour {
     public float ClimbingSpeed = 1f;
     public SpriteRenderer spriteRenderer;
     private DestinationSelector destinationSelector;
-
-
-
+    private RightClickOptions RightClick;
 
     void Start(){
         destinationSelector = FindObjectOfType<DestinationSelector>();
+        RightClick = FindObjectOfType<RightClickOptions>();
 
+        
         animator = gameObject.GetComponentInChildren<Animator>();
         rb2D = transform.GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -30,7 +30,11 @@ public class PlayerMove : MonoBehaviour {
 
     void Update(){
         // Prevent movement if in selection mode
-        if (destinationSelector != null && destinationSelector.isSelecting)
+        if ((destinationSelector != null && destinationSelector.isSelecting))
+        {
+            return;
+        }
+        if ((RightClick != null && RightClick.isMenuActive))
         {
             return;
         }

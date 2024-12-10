@@ -1,11 +1,9 @@
-using System.Collections.Generic;
-using System.Collections;
 using UnityEngine;
 
 public class WallToggleButton : MonoBehaviour
 {
     public int channel = 0;
-    public List<WallToggle> wallList = new List<WallToggle>();
+    public WallToggle wall; // Changed from a list to a single WallToggle
     public GameObject buttonUp;
     public GameObject buttonDown;
     public AudioSource ButtonPressAudio;
@@ -18,17 +16,14 @@ public class WallToggleButton : MonoBehaviour
     {
         buttonUp.SetActive(true);
         buttonDown.SetActive(false);
-
     }
 
     void Update()
     {
-        if (setup)
+        if (setup && wall != null)
         {
-            foreach (WallToggle wall in wallList)
-            {
-                wall.SetColor(GetComponentInChildren<SpriteRenderer>().color);
-            }
+            // Set the wall's color based on the button's sprite color
+            wall.SetColor(GetComponentInChildren<SpriteRenderer>().color);
             setup = false;
         }
     }
@@ -43,7 +38,8 @@ public class WallToggleButton : MonoBehaviour
             buttonDown.SetActive(true);
             ButtonPressAudio.Play();
 
-            foreach (WallToggle wall in wallList)
+            // Toggle the state of the associated wall
+            if (wall != null)
             {
                 wall.ToggleState();
             }
@@ -54,7 +50,7 @@ public class WallToggleButton : MonoBehaviour
     {
         if (collision is BoxCollider2D && (collision.gameObject.name == "Dog" || player_can_press))
         {
-            Debug.Log("Button un pushed");
+            Debug.Log("Button unpushed");
             pressed = false;
             buttonUp.SetActive(true);
             buttonDown.SetActive(false);
