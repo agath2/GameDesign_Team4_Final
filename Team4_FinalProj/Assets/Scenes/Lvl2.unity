@@ -785,9 +785,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1244518335802435135, guid: 3ccd5cac6466049a0818e96a4b3b8e18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3495552502180266075, guid: 3ccd5cac6466049a0818e96a4b3b8e18, type: 3}
       propertyPath: m_Name
       value: OptionMenuCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150888510614126512, guid: 3ccd5cac6466049a0818e96a4b3b8e18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4324365126087517862, guid: 3ccd5cac6466049a0818e96a4b3b8e18, type: 3}
       propertyPath: m_Navigation.m_Mode
