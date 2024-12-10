@@ -18,6 +18,12 @@ public class GameHandler : MonoBehaviour
         SceneManager.LoadScene(levelScene); // Load the intro scene
     }
 
+    // Method to start the game from the dog namign
+    public void ThirdLevel()
+    {
+        SceneManager.LoadScene("Lvl3"); // Load the 3rd level
+    }
+
     // Method to transition to the how-to-play scene
     public void GoToHowToPlay()
     {
