@@ -119,6 +119,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -134,7 +147,10 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -114.5, y: 113}
+        - {x: -114.5, y: -113}
+        - {x: 114.5, y: 113}
       tessellationDetail: 0
       bones: []
       spriteID: 3cadda38df0474f9187a86c2606f6cea
@@ -176,7 +192,11 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -114.5, y: 97}
+        - {x: -114.5, y: -113}
+        - {x: 114.5, y: -113}
+        - {x: 114.5, y: 96}
       tessellationDetail: 0
       bones: []
       spriteID: 56a05405945c14a0ca914c0cb1654721
@@ -197,7 +217,11 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -114.5, y: 98}
+        - {x: -114.5, y: -113}
+        - {x: 114.5, y: -113}
+        - {x: 114.5, y: 97}
       tessellationDetail: 0
       bones: []
       spriteID: f391186b52a5046cf9ea6bb7c92d77bf
@@ -218,7 +242,11 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -114.5, y: 98}
+        - {x: -114.5, y: -113}
+        - {x: 114.5, y: -113}
+        - {x: 114.5, y: 96}
       tessellationDetail: 0
       bones: []
       spriteID: 605c0914543b44cbe9ebad6216987c7e
@@ -428,7 +456,10 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -114.5, y: -113}
+        - {x: 114.5, y: -113}
+        - {x: 114.5, y: 113}
       tessellationDetail: 0
       bones: []
       spriteID: 431f464a6dc174f97abd58a292664f7b
@@ -449,7 +480,10 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -114.5, y: 104}
+        - {x: -114.5, y: -113}
+        - {x: 114.5, y: -113}
       tessellationDetail: 0
       bones: []
       spriteID: f69167db99ee94c54bc78a845672fba8
@@ -617,7 +651,12 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -114.5, y: 64}
+        - {x: -114.5, y: -54}
+        - {x: -44.5, y: -113}
+        - {x: 114.5, y: -113}
+        - {x: 114.5, y: 65}
       tessellationDetail: 0
       bones: []
       spriteID: 74e3cbf11d19f4dcda63f250e7bce33f
@@ -638,7 +677,11 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -114.5, y: 65}
+        - {x: -114.5, y: -113}
+        - {x: 114.5, y: -113}
+        - {x: 114.5, y: 65}
       tessellationDetail: 0
       bones: []
       spriteID: a15fee732e2e44009a9ccccb8cf8fccd
@@ -659,7 +702,13 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -114.5, y: 66}
+        - {x: -114.5, y: -113}
+        - {x: 14.5, y: -113}
+        - {x: 57.5, y: -94}
+        - {x: 114.5, y: -32}
+        - {x: 114.5, y: 65}
       tessellationDetail: 0
       bones: []
       spriteID: db4f1fd2efc1048eb820f8526615dd3b
