@@ -28,6 +28,8 @@ public class RightClickOptions : MonoBehaviour
         followButton.onClick.AddListener(OnFollowClicked);
         stayButton.onClick.AddListener(OnStayClicked);
         fetchButton.onClick.AddListener(OnFetchClicked);
+
+
     }
 
     public void ShowOptionMenu(Vector2 position)
@@ -68,7 +70,19 @@ public class RightClickOptions : MonoBehaviour
     {
         Debug.Log("Go Here clicked");
         DogBarkCommandAudio.Play();
-        Vector2 worldPosition = optionMenu.transform.position;
+        Vector2 worldPosition;
+        if (!useSelector)
+        {
+            worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            dog.SetTargetPosition(worldPosition);
+            optionMenu.SetActive(false);
+        }
+        else
+        {
+            worldPosition = optionMenu.transform.position;
+            dog.SetTargetPosition(worldPosition);
+            optionMenu.SetActive(false);
+        }
         dog.SetTargetPosition(worldPosition);
         CloseOptionMenu();
     }

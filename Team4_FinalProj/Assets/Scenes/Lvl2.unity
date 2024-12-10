@@ -378,6 +378,200 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 784351d6d700a468aa0ae3e0dad3e6f8, type: 3}
+--- !u!1001 &538986528
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1304464231}
+    m_Modifications:
+    - target: {fileID: 1989816301494615499, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_Name
+      value: DogHint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3944946360256153208, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.952107
+      objectReference: {fileID: 0}
+    - target: {fileID: 3944946360256153208, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.9080653
+      objectReference: {fileID: 0}
+    - target: {fileID: 3944946360256153208, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 3944946360256153208, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155009446469981136, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_text
+      value: Open the menu again and select follow to make your dog follow you again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155009446469981136, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_fontSize
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155009446469981136, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_margin.x
+      value: -2.1801581
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155009446469981136, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_margin.z
+      value: -0.32369614
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155009446469981136, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4497792951890658543, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 4497792951890658543, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 4749800984396086422, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_Size.x
+      value: 9.945248
+      objectReference: {fileID: 0}
+    - target: {fileID: 4749800984396086422, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_Offset.x
+      value: 4.511099
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039015242891847415, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_Name
+      value: Controller1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.8609107
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -14.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487876712879601544, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487876712879601544, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858765358571127947, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_text
+      value: Open the menu again and select follow to make your dog follow you again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858765358571127947, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_fontSize
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858765358571127947, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_margin.w
+      value: 2.006293
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858765358571127947, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_margin.x
+      value: -2.7021685
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858765358571127947, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_margin.z
+      value: 0.2569008
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858765358571127947, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.45
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+--- !u!224 &538986529 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+  m_PrefabInstance: {fileID: 538986528}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &558676212
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,11 +831,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5980214041442314070, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
       propertyPath: m_text
-      value: To let the dog out, step on the button.
+      value: To let the dog out, step on the button. Your dog will automatically
+        follow you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5980214041442314070, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_fontSize
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5980214041442314070, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 6258539200140286253, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
       propertyPath: m_text
-      value: To let the dog out, step on the button.
+      value: To let the dog out, step on the button. Your dog will automatically
+        follow you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258539200140286253, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_fontSize
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258539200140286253, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_margin.w
+      value: 1.1439686
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258539200140286253, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_margin.z
+      value: -0.30386734
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258539200140286253, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 6992823107052408050, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
       propertyPath: m_LocalScale.x
@@ -653,11 +873,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6992823107052408050, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.17
+      value: -1.1
       objectReference: {fileID: 0}
     - target: {fileID: 6992823107052408050, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.07
+      value: 1.79
       objectReference: {fileID: 0}
     - target: {fileID: 7124666141952492560, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -785,9 +1005,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1244518335802435135, guid: 3ccd5cac6466049a0818e96a4b3b8e18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3495552502180266075, guid: 3ccd5cac6466049a0818e96a4b3b8e18, type: 3}
       propertyPath: m_Name
       value: OptionMenuCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150888510614126512, guid: 3ccd5cac6466049a0818e96a4b3b8e18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4324365126087517862, guid: 3ccd5cac6466049a0818e96a4b3b8e18, type: 3}
       propertyPath: m_Navigation.m_Mode
@@ -1401,6 +1629,7 @@ Transform:
   - {fileID: 710779941}
   - {fileID: 4918948861427578006}
   - {fileID: 1915438426}
+  - {fileID: 538986529}
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
