@@ -10592,6 +10592,10 @@ PrefabInstance:
       propertyPath: dog
       value: 
       objectReference: {fileID: 1490274352}
+    - target: {fileID: 4972360306653818824, guid: c6ef8b86464ea4350ab08c5f94ea005c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 110
+      objectReference: {fileID: 0}
     - target: {fileID: 5235098656416174306, guid: c6ef8b86464ea4350ab08c5f94ea005c, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -10635,6 +10639,14 @@ PrefabInstance:
     - target: {fileID: 5235098656416174306, guid: c6ef8b86464ea4350ab08c5f94ea005c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5398346912400244385, guid: c6ef8b86464ea4350ab08c5f94ea005c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -24
+      objectReference: {fileID: 0}
+    - target: {fileID: 9015551001997992679, guid: c6ef8b86464ea4350ab08c5f94ea005c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
