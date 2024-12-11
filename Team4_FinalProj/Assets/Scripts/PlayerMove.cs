@@ -157,12 +157,5 @@ public class PlayerMove : MonoBehaviour
             rb2D.velocity = new Vector2(0f, 0f);
         }
     }
-
-    public void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.gameObject.tag == "Car")
-        {
-            gameHandlerObj.RestartLevel();
-        }
-    }
+    
 }

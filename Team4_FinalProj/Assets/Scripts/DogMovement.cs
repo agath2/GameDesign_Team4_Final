@@ -14,10 +14,20 @@ public class DogMovement : MonoBehaviour
     private float scaleX;
     public bool followPlayer = true;
     private Vector2 targetPosition;
-    private bool moveToTarget = false;
+    public bool moveToTarget = false;
     public Animator anim;
     public GameObject[] treatList;
     private MapManager mapManager;
+    public bool walking = false;
+
+    public Vector2 lastPosition;
+    public float timeSinceLastMove = 0f;
+    public float stopThreshold = 0.05f; 
+    public float maxIdleTime = 0.5f;
+
+    private GameObject currentFetchable;
+    public float fetchableRange = 4f;
+    public bool useSelector = false;
     
 
     void Start()
@@ -29,6 +39,8 @@ public class DogMovement : MonoBehaviour
         scaleX = gameObject.transform.localScale.x;
 
         mapManager = FindObjectOfType<MapManager>();
+
+        lastPosition = transform.position;
     }
 
 
@@ -52,6 +64,8 @@ public class DogMovement : MonoBehaviour
         }
 
         if (minDist != Mathf.Infinity) SetTargetPosition(closest); 
+        TrackMovement();
+        walking = anim.GetBool("Walk");
     }
 
     void FixedUpdate(){
@@ -72,14 +86,7 @@ public class DogMovement : MonoBehaviour
 
     public bool isStopped()
     {
-        if (!moveToTarget && !followPlayer)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return (!moveToTarget && !followPlayer);
     }
 
 
@@ -101,7 +108,6 @@ public class DogMovement : MonoBehaviour
 
     private void MoveToTarget(Vector2 target)
     {
-
         FlipSprite(target.x > transform.position.x);
         anim.SetBool("Walk", true);
 
@@ -112,7 +118,7 @@ public class DogMovement : MonoBehaviour
             
         }
 
-        if(rb.velocity.y > 0){
+        if(rb.velocity.y > 0 && walking){
             anim.SetTrigger("Jump");
         }
 
@@ -133,11 +139,15 @@ public class DogMovement : MonoBehaviour
         targetPosition = position;
         moveToTarget = true;
         followPlayer = false;
+        timeSinceLastMove = 0f;
+        lastPosition = transform.position;
     }
 
     public void Follow(){
         moveToTarget = false;
         followPlayer = true;
+        timeSinceLastMove = 0f;
+        lastPosition = transform.position;
     }
 
     public void Stay()
@@ -146,6 +156,97 @@ public class DogMovement : MonoBehaviour
         followPlayer = false;
         anim.SetBool("Walk", false);
         FlipSprite(player.transform.position.x > transform.position.x);
+    }
+
+    private void TrackMovement()
+    {
+        Debug.Log("trackMovement");
+        if (!moveToTarget && !followPlayer) return;
+        float distanceMoved = Mathf.Abs(transform.position.x - lastPosition.x);
+
+        if (distanceMoved < stopThreshold)
+        {
+            timeSinceLastMove += Time.deltaTime;
+            if (timeSinceLastMove >= maxIdleTime)
+            {
+                Debug.Log("too long, sit down now");
+                anim.SetBool("Walk", false);
+            }
+        }
+        else
+        {
+            timeSinceLastMove = 0f; 
+        }
+
+        lastPosition = transform.position; 
+    }
+
+    public void StartFetchCoroutine(Vector2 worldPosition){
+        StartCoroutine(WaitForDogToStop(worldPosition));
+    }
+
+    // Coroutine to wait for the dog to reach the target
+    IEnumerator WaitForDogToStop(Vector2 targetPosition)
+    {
+        // Wait while the dog is moving
+        while (!isStopped())
+        {
+            yield return null; // Wait for one frame
+        }
+
+        // Now the dog has stopped moving, check for fetchable objects
+        CheckForNearbyFetchable();
+    }
+
+    void CheckForNearbyFetchable()
+    {
+        // Get all objects with the "Fetch" tag in the scene
+        GameObject[] fetch = GameObject.FindGameObjectsWithTag("Fetch");
+
+        // Get all objects with the "Key" tag
+        GameObject[] keys = GameObject.FindGameObjectsWithTag("Key");
+
+        // Combine both arrays into a single list
+        GameObject[] fetchables = new GameObject[fetch.Length + keys.Length];
+        fetch.CopyTo(fetchables, 0);
+        keys.CopyTo(fetchables, fetch.Length);
+
+        // Iterate through each fetchable item
+        foreach (GameObject fetchable in fetchables)
+        {
+            // Calculate the distance between the dog and the fetchable object
+            float distance = Vector2.Distance(transform.position, fetchable.transform.position);
+
+            // If the fetchable is within range, pick it up
+            if (distance <= fetchableRange)
+            {
+                Debug.Log("Fetchable item within range: " + fetchable.name);
+
+                // Set it as the current fetchable object
+                currentFetchable = fetchable;
+
+                // Disable the object's physics interactions (if it has any), and attach it to the dog
+                Rigidbody2D rb = currentFetchable.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    rb.isKinematic = true; // Disable physics to make it follow the dog
+                }
+
+                // Set the object's position relative to the dog and parent it to the dog
+                currentFetchable.transform.SetParent(transform); // Parent it to the dog's transform
+                currentFetchable.transform.localPosition = Vector3.zero; // Position the object at the dog's transform
+
+                currentFetchable.SetActive(true); // Ensure the object is visible after being picked up
+
+                Debug.Log("Object picked up and now following the dog: " + currentFetchable.name);
+
+                Follow();
+
+                return; // Exit once we find the first fetchable object within range
+            }
+        }
+
+        Debug.Log("No fetchable objects within range.");
     }
 
 
