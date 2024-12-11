@@ -34,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4918948861698041666, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
       propertyPath: m_AnchorMax.x
@@ -110,15 +110,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4993629749403009408, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.7
+      value: -0.81
       objectReference: {fileID: 0}
     - target: {fileID: 4993629749403009408, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.82
+      value: 1.18
       objectReference: {fileID: 0}
     - target: {fileID: 5980214041442314070, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
       propertyPath: m_text
-      value: Walk into the door to enter the next scene.
+      value: Walk into the door to go to the next level
       objectReference: {fileID: 0}
     - target: {fileID: 5980214041442314070, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
       propertyPath: m_margin.x
@@ -134,11 +134,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6258539200140286253, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
       propertyPath: m_text
-      value: Walk into the door to enter the next scene.
+      value: Walk into the door to go to the next level
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258539200140286253, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_margin.x
+      value: -1.6529317
       objectReference: {fileID: 0}
     - target: {fileID: 6258539200140286253, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
       propertyPath: m_margin.z
       value: -0.8835411
+      objectReference: {fileID: 0}
+    - target: {fileID: 6413324074107231899, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6992823107052408050, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
       propertyPath: m_LocalScale.x
@@ -167,6 +175,10 @@ PrefabInstance:
     - target: {fileID: 8351676250226721996, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098020538865820761, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

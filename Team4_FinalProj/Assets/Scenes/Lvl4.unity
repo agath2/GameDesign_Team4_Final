@@ -214,7 +214,7 @@ AudioSource:
   m_GameObject: {fileID: 130471976}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 439a49652ee964533b2530adbbe2b29a, type: 2}
   m_audioClip: {fileID: 8300000, guid: a9647f63ad3ad476bbae530531883459, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1979,6 +1979,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DogHint
       objectReference: {fileID: 0}
+    - target: {fileID: 3852038369011929317, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.11
+      objectReference: {fileID: 0}
     - target: {fileID: 4155009446469981136, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
       propertyPath: m_text
       value: "Right-click on the key to open the dog menu. Then select the \u201CFetch\u201D
@@ -1991,6 +1995,14 @@ PrefabInstance:
     - target: {fileID: 4155009446469981136, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
       propertyPath: m_fontSizeBase
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4497792951890658543, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 4497792951890658543, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 4749800984396086422, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
       propertyPath: m_Size.x
@@ -2096,13 +2108,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5772301024651642251, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_Size.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5772301024651642251, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486817435990368205, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8858765358571127947, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
       propertyPath: m_text
-      value: Press button 0 to select a location on screen, use the left and right
-        joystick to cycle through available locations. To select a location, press
-        button 0, this will open the menu. Then use the up and down joystick to choose
-        the "Fetch" option. Press button 0 to confirm and send the dog to fetch the
-        key
+      value: "Press button 0 to select a location on screen, use the left and right
+        joystick to cycle through available locations. \nTo select a location, press
+        button 0, this will open the menu. \nThen use the up and down joystick to
+        choose the \"Fetch\" option. \nPress button 0 to confirm and send the dog
+        to fetch the key"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858765358571127947, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_fontSize
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858765358571127947, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7157,9 +7189,25 @@ PrefabInstance:
       propertyPath: m_text
       value: Walk to the door once your dog has the key to unlock the door and leave!
       objectReference: {fileID: 0}
+    - target: {fileID: 6370771299750660436, guid: e4414d53565c74befbf31326cc94760e, type: 3}
+      propertyPath: m_fontSize
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370771299750660436, guid: e4414d53565c74befbf31326cc94760e, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.45
+      objectReference: {fileID: 0}
     - target: {fileID: 6651454345296787247, guid: e4414d53565c74befbf31326cc94760e, type: 3}
       propertyPath: m_text
       value: Walk to the door once your dog has the key to unlock the door and leave!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651454345296787247, guid: e4414d53565c74befbf31326cc94760e, type: 3}
+      propertyPath: m_fontSize
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651454345296787247, guid: e4414d53565c74befbf31326cc94760e, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 7587331385840426349, guid: e4414d53565c74befbf31326cc94760e, type: 3}
       propertyPath: m_Name
@@ -7172,6 +7220,10 @@ PrefabInstance:
     - target: {fileID: 8050242681036397707, guid: e4414d53565c74befbf31326cc94760e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 2.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138536664744227872, guid: e4414d53565c74befbf31326cc94760e, type: 3}
+      propertyPath: m_Size.y
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
