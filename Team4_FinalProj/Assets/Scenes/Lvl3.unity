@@ -468,6 +468,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -3.8
       objectReference: {fileID: 0}
+    - target: {fileID: 1945122303065184563, guid: 8e30eacf64227443ab79aae08a4727a7, type: 3}
+      propertyPath: SFX_Steps.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3740862152425841956, guid: 8e30eacf64227443ab79aae08a4727a7, type: 3}
       propertyPath: m_Name
       value: PlayerA

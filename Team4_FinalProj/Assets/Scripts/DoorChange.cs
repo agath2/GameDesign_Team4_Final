@@ -10,7 +10,8 @@ public class DoorChange : MonoBehaviour
      public GameObject doorLocked;
     // public GameObject msgNeedKey;
     public string NextLevel = "StartMen";
-    public AudioClip DoorOpen;
+    public AudioSource DoorOpen;
+    public AudioSource DoorUnlockedOpen;
     public bool isLocked = true;
 
     // Track if the key has been picked up
@@ -73,6 +74,11 @@ public class DoorChange : MonoBehaviour
                 StartCoroutine(OpenDoorAfterDelay());
                 Debug.Log("Door opened!");
             }
+            else if (!isLocked)
+            {
+                StartCoroutine(OpenDoorAfterDelay());
+                Debug.Log("Door's not locked!");
+            }
             else if (!hasKey)
             {
                 Debug.Log("You need a key to enter.");
@@ -89,14 +95,25 @@ public class DoorChange : MonoBehaviour
 
     IEnumerator OpenDoorAfterDelay()
     {
-        doorLocked.SetActive(false);
-        doorClosed.SetActive(true);
-        yield return new WaitForSeconds(1f);
-        isLocked = false;
-        doorClosed.SetActive(false);
-        doorOpened.SetActive(true);
-        SceneManager.LoadScene(NextLevel);
-        Debug.Log("Door opened!");
+        
+
+        if(!DoorOpen.isPlaying && !DoorUnlockedOpen.isPlaying){
+            if(isLocked){
+                doorLocked.SetActive(false);
+                doorClosed.SetActive(true);
+                DoorOpen.Play();
+                yield return new WaitForSeconds(2f);
+            } 
+            else{
+                DoorUnlockedOpen.Play();
+            }
+            doorClosed.SetActive(false);
+            doorOpened.SetActive(true);
+            yield return new WaitForSeconds(2f);
+            isLocked = false;
+            SceneManager.LoadScene(NextLevel);
+            Debug.Log("Door opened!");
+        }
     }
 
     // Optional: Hide message when player leaves the are
