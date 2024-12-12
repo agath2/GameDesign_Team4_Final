@@ -908,6 +908,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6797583957789233237, guid: bb2c70f4cbe7342f28e617a3b6f5c326, type: 3}
   m_PrefabInstance: {fileID: 637802288}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &738474324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3740862152425841956, guid: 8e30eacf64227443ab79aae08a4727a7, type: 3}
+  m_PrefabInstance: {fileID: 619306466}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &743285084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,7 +1555,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 20
+      m_TileSpriteIndex: 19
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2750,7 +2755,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 20
+      m_TileSpriteIndex: 19
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2960,7 +2965,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 20
+      m_TileSpriteIndex: 19
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3499,10 +3504,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 6
     m_Data: {fileID: -1617351256, guid: 07c772c37435c49e8ac1125e10381279, type: 3}
+  - m_RefCount: 3
+    m_Data: {fileID: -71679055, guid: 07c772c37435c49e8ac1125e10381279, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 3
-    m_Data: {fileID: -2123131257, guid: 07c772c37435c49e8ac1125e10381279, type: 3}
   - m_RefCount: 62
     m_Data: {fileID: -262272969, guid: 07c772c37435c49e8ac1125e10381279, type: 3}
   - m_RefCount: 79
@@ -3591,7 +3596,7 @@ AudioSource:
   m_GameObject: {fileID: 746014844}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 439a49652ee964533b2530adbbe2b29a, type: 2}
   m_audioClip: {fileID: 8300000, guid: a9647f63ad3ad476bbae530531883459, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -4431,6 +4436,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7160640813241009145, guid: 27bf4f01166b54a88a24533a0feca305, type: 3}
   m_PrefabInstance: {fileID: 1266609216}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1375161190 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2952615173263436254, guid: 529fd1cee1b40473690122b6440f9160, type: 3}
+  m_PrefabInstance: {fileID: 1908958834}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1400438397
 GameObject:
   m_ObjectHideFlags: 0
@@ -4492,10 +4502,18 @@ PrefabInstance:
     - target: {fileID: 4661570488360258879, guid: 02f25e52870194d1daed1253f958f90f, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 738474324}
     - target: {fileID: 4661570488360258879, guid: 02f25e52870194d1daed1253f958f90f, type: 3}
       propertyPath: jumpForce
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4661570488360258879, guid: 02f25e52870194d1daed1253f958f90f, type: 3}
+      propertyPath: maxIdleTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4661570488360258879, guid: 02f25e52870194d1daed1253f958f90f, type: 3}
+      propertyPath: stopThreshold
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 7767379128529325709, guid: 02f25e52870194d1daed1253f958f90f, type: 3}
       propertyPath: m_RootOrder
@@ -5821,6 +5839,18 @@ PrefabInstance:
       propertyPath: NextLevel
       value: EndScene
       objectReference: {fileID: 0}
+    - target: {fileID: 2017736135976079247, guid: 529fd1cee1b40473690122b6440f9160, type: 3}
+      propertyPath: doorClosed
+      value: 
+      objectReference: {fileID: 1375161190}
+    - target: {fileID: 3902406311848341226, guid: 529fd1cee1b40473690122b6440f9160, type: 3}
+      propertyPath: m_Size.x
+      value: 2.388895
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902406311848341226, guid: 529fd1cee1b40473690122b6440f9160, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.031241417
+      objectReference: {fileID: 0}
     - target: {fileID: 5215369549015074746, guid: 529fd1cee1b40473690122b6440f9160, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -5966,7 +5996,7 @@ GameObject:
   - component: {fileID: 2083153940}
   m_Layer: 0
   m_Name: Key (1)
-  m_TagString: Fetch
+  m_TagString: Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

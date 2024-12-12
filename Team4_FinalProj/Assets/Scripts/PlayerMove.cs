@@ -18,6 +18,9 @@ public class PlayerMove : MonoBehaviour
     private DestinationSelector destinationSelector;
     private RightClickOptions RightClick;
 
+    private AudioSource StepToPlay;
+    public AudioSource[] SFX_Steps;
+
     void Start()
     {
         destinationSelector = FindObjectOfType<DestinationSelector>();
@@ -31,6 +34,11 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+         if ((Input.GetAxisRaw("Horizontal")!= 0) || (Input.GetAxisRaw("Vertical")!= 0)){
+            PlaySteps();
+        } else {
+            StopSteps();
+        }
         // Prevent movement if in selection mode
         if ((destinationSelector != null && destinationSelector.isSelecting))
         {
@@ -158,11 +166,21 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.gameObject.tag == "Car")
-        {
-            gameHandlerObj.RestartLevel();
+    public void PlaySteps(){
+        if ((StepToPlay != null) && (StepToPlay.isPlaying)){
+            return;
+        } else {
+            int StepNum = Random.Range(0, SFX_Steps.Length);
+            StepToPlay = SFX_Steps[StepNum];
+            StepToPlay.Play();
         }
     }
+
+    public void StopSteps(){
+        if ((StepToPlay != null) && (StepToPlay.isPlaying)){
+            // StepToPlay.Stop();
+            StepToPlay = null;
+        }
+    }
+    
 }

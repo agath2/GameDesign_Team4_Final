@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -5,14 +6,23 @@ using UnityEngine.SceneManagement;
 public class DoorChange : MonoBehaviour
 {
      public GameObject doorOpened;
+     public GameObject doorClosed;
      public GameObject doorLocked;
     // public GameObject msgNeedKey;
     public string NextLevel = "StartMen";
-    public AudioClip DoorOpen;
+    public AudioSource DoorOpen;
+    public AudioSource DoorUnlockedOpen;
     public bool isLocked = true;
 
     // Track if the key has been picked up
     public bool hasKey = false;
+
+    void Start()
+    {
+        doorOpened.SetActive(false);
+        doorClosed.SetActive(!isLocked);
+        doorLocked.SetActive(isLocked);
+    }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -28,10 +38,11 @@ public class DoorChange : MonoBehaviour
             if (hasKey && isLocked)  // If the player has the key and the door is locked
             {
               //  GetComponent<AudioSource>().Play();
-                 doorLocked.SetActive(false);
-                 doorOpened.SetActive(true);
-                isLocked = false;
-                SceneManager.LoadScene(NextLevel);
+                // doorLocked.SetActive(false);
+                // doorOpened.SetActive(true);
+                // isLocked = false;
+                // SceneManager.LoadScene(NextLevel);
+                StartCoroutine(OpenDoorAfterDelay());
                 Debug.Log("Door opened!");
             }
             else if (!hasKey)
@@ -39,10 +50,69 @@ public class DoorChange : MonoBehaviour
  
                 Debug.Log("You need a key to enter.");
             }
-            else
+            // else
+            // {
+            //     doorLocked.SetActive(false);
+            //     doorOpened.SetActive(true);
+            //     SceneManager.LoadScene(NextLevel);
+            //     Debug.Log("Door is already open.");
+            // }
+        }
+    }
+
+    public void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))  // Assuming the player has the tag "Player"
+        {
+            if (hasKey && isLocked)  // If the player has the key and the door is locked
             {
-                Debug.Log("Door is already open.");
+              //  GetComponent<AudioSource>().Play();
+                // doorLocked.SetActive(false);
+                // doorOpened.SetActive(true);
+                // isLocked = false;
+                // SceneManager.LoadScene(NextLevel);
+                StartCoroutine(OpenDoorAfterDelay());
+                Debug.Log("Door opened!");
             }
+            else if (!isLocked)
+            {
+                StartCoroutine(OpenDoorAfterDelay());
+                Debug.Log("Door's not locked!");
+            }
+            else if (!hasKey)
+            {
+                Debug.Log("You need a key to enter.");
+            }
+            // else
+            // {
+            //     doorLocked.SetActive(false);
+            //     doorOpened.SetActive(true);
+            //     SceneManager.LoadScene(NextLevel);
+            //     Debug.Log("Door is already open.");
+            // }
+        }
+    }
+
+    IEnumerator OpenDoorAfterDelay()
+    {
+        
+
+        if(!DoorOpen.isPlaying && !DoorUnlockedOpen.isPlaying){
+            if(isLocked){
+                doorLocked.SetActive(false);
+                doorClosed.SetActive(true);
+                DoorOpen.Play();
+                yield return new WaitForSeconds(2f);
+            } 
+            else{
+                DoorUnlockedOpen.Play();
+            }
+            doorClosed.SetActive(false);
+            doorOpened.SetActive(true);
+            yield return new WaitForSeconds(2f);
+            isLocked = false;
+            SceneManager.LoadScene(NextLevel);
+            Debug.Log("Door opened!");
         }
     }
 

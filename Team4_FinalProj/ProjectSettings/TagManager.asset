@@ -14,6 +14,7 @@ TagManager:
   - Clickable
   - Car
   - PauseMenuSlider
+  - Inventory
   layers:
   - Default
   - TransparentFX
