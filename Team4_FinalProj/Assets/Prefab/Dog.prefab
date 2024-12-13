@@ -132,8 +132,16 @@ MonoBehaviour:
   jumpForce: 6
   rb: {fileID: 0}
   followPlayer: 1
+  moveToTarget: 0
   anim: {fileID: 0}
   treatList: []
+  walking: 0
+  lastPosition: {x: 0, y: 0}
+  timeSinceLastMove: 0
+  stopThreshold: 0.05
+  maxIdleTime: 0.5
+  fetchableRange: 4
+  useSelector: 0
 --- !u!114 &3183980427978428421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1252465407819496645}
   launchForce: 20
+  bounce: {fileID: 0}
 --- !u!58 &5291001209472625389
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1237,7 +1246,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 0
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1290,7 +1299,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 10
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -6065,7 +6074,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 0
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -6118,7 +6127,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 10
       minScalar: 0
       maxCurve:
         serializedVersion: 2
