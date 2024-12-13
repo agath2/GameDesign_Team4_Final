@@ -4973,3 +4973,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 1
+  pickupSound: {fileID: 8300000, guid: 2f5b262f2e3ec4861b7a6f274d671f1e, type: 3}
