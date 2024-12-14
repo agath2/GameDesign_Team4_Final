@@ -57,24 +57,6 @@ public class PlayerMove : MonoBehaviour
 
             animator.SetFloat("xVelocity", Mathf.Abs(hMove.x));
 
-            // if (Input.GetAxis("Horizontal") != 0){
-            // //       animator.SetBool ("Walk", true);
-            // //       if (!WalkSFX.isPlaying){
-            // //             WalkSFX.Play();
-            // //      }
-            //     animator.SetBool("Walk", true);
-            // } else {
-            // //      animator.SetBool ("Walk", false);
-            // //      WalkSFX.Stop();
-            //     animator.SetBool("Walk", false);
-            // }
-
-            // Turning: Reverse if input is moving the Player right and Player faces left
-            // if ((hMove.x <0 && !FaceRight) || (hMove.x >0 && FaceRight)){
-            //     playerTurn();
-            //     // FlipPlayer();
-            // }
-
             if (hMove.x < 0 && FaceRight)
             {
                 playerTurn();
