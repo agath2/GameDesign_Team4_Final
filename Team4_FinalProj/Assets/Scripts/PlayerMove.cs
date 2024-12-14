@@ -53,7 +53,7 @@ public class PlayerMove : MonoBehaviour
 
         if (isAlive == true)
         {
-            transform.position += hMove * runSpeed * Time.deltaTime;
+            //stransform.position += hMove * runSpeed * Time.deltaTime;
 
             animator.SetFloat("xVelocity", Mathf.Abs(hMove.x));
 
