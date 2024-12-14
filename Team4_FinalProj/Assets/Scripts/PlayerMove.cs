@@ -5,31 +5,34 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
 
-    public GameHandler gameHandlerObj;
-    public Animator animator;
-    public Rigidbody2D rb2D;
+    //public GameHandler gameHandlerObj;
+    private Animator animator;
+    private Rigidbody2D rb2D;
     private bool FaceRight = true; // determine which way player is facing.
     public static float runSpeed = 10f;
     public bool isAlive = true;
     //public AudioSource WalkSFX;
     private Vector3 hMove;
     public float ClimbingSpeed = 1f;
-    public SpriteRenderer spriteRenderer;
+    //public SpriteRenderer spriteRenderer;
     private DestinationSelector destinationSelector;
     private RightClickOptions RightClick;
 
     private AudioSource StepToPlay;
     public AudioSource[] SFX_Steps;
 
+    public GameObject particlesDust;
+
     void Start()
     {
         destinationSelector = FindObjectOfType<DestinationSelector>();
         RightClick = FindObjectOfType<RightClickOptions>();
 
-
         animator = gameObject.GetComponentInChildren<Animator>();
         rb2D = transform.GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        //spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        particlesDust.SetActive(false);
     }
 
     void Update()
@@ -60,10 +63,19 @@ public class PlayerMove : MonoBehaviour
             if (hMove.x < 0 && FaceRight)
             {
                 playerTurn();
+                if (rb2D.velocity.y == 0){
+                    particlesDust.SetActive(true);
+                }
             }
             else if (hMove.x > 0 && !FaceRight)
             {
                 playerTurn();
+                if (rb2D.velocity.y == 0){
+                    particlesDust.SetActive(true);
+                }
+            }
+            else if (hMove.x ==0){
+                particlesDust.SetActive(false);
             }
         }
     }
@@ -110,10 +122,10 @@ public class PlayerMove : MonoBehaviour
         FaceRight = !FaceRight;
 
         // NOTE: Multiply player's x local scale by -1.
-        // Vector3 theScale = transform.localScale;
-        // theScale.x *= -1;
-        // transform.localScale = theScale;
-        spriteRenderer.flipX = !FaceRight;
+         Vector3 theScale = transform.localScale;
+         theScale.x *= -1;
+         transform.localScale = theScale;
+        //spriteRenderer.flipX = !FaceRight;
     }
 
     public void OnTriggerStay2D(Collider2D collider)

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerJump : MonoBehaviour {
 
-    public Animator anim;
-    public Rigidbody2D rb;
+    private Animator anim;
+    private Rigidbody2D rb;
     public float jumpForce = 20f;
     public Transform feet;
     public LayerMask groundLayer;
@@ -69,8 +69,8 @@ public class PlayerJump : MonoBehaviour {
     }
 
     public bool IsGrounded() {
-        Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, 0.2f, groundLayer);
-        Collider2D enemyCheck = Physics2D.OverlapCircle(feet.position, 0.2f, enemyLayer);
+        Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, 0.1f, groundLayer);
+        Collider2D enemyCheck = Physics2D.OverlapCircle(feet.position, 0.1f, enemyLayer);
         if ((groundCheck != null) || (enemyCheck != null)) {
             //Debug.Log("I am trouching ground!");
             jumpTimes = 0;
@@ -78,4 +78,6 @@ public class PlayerJump : MonoBehaviour {
         }
         return false;
     }
+
+
 }
