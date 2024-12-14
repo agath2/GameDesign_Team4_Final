@@ -7,14 +7,19 @@ public class CoinManager : MonoBehaviour
     public int totalCoins = 0;          // The player's total coin count
     public Text coinText;               // Reference to the UI Text element to display coins
 
-    private void Awake()
+private void Awake()
+{
+    // Ensures there's only one instance of CoinManager (Singleton pattern)
+    if (instance == null)
     {
-        // Ensures there's only one instance of CoinManager (Singleton pattern)
-        if (instance == null)
-            instance = this;
-        else
-            Destroy(gameObject);
+        instance = this;
+        DontDestroyOnLoad(gameObject);  // Make this object persist across scenes
     }
+    else
+    {
+        Destroy(gameObject);  // If there's already an instance, destroy the new one
+    }
+}
 
     // Method to add coins to the player's total
     public void AddCoins(int amount)
