@@ -484,6 +484,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6797583957789233237, guid: bb2c70f4cbe7342f28e617a3b6f5c326, type: 3}
   m_PrefabInstance: {fileID: 55664546}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &122688977 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3577056100912421309, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+  m_PrefabInstance: {fileID: 1647321252}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &203735151
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,6 +525,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &344904816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 344904817}
+  - component: {fileID: 344904818}
+  m_Layer: 0
+  m_Name: DisplayText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &344904817
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344904816}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -49.87, y: -8.690001, z: -5.7218213}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1610995752}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &344904818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344904816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a12a8d3950417b44aca989c9e3f7675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiText: {fileID: 1000009218}
+  hintMessage: 'You hear {DogName}''s footsteps grow weary.
+
+
+    Is the Door near?'
 --- !u!1 &413882032
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,13 +1913,13 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {r: 0, g: 0.43849897, b: 1, a: 0.39215687}
   - m_RefCount: 0
-    m_Data: {r: 6.0418e-41, g: 6.0418e-41, b: 6.0418e-41, a: 6.0418e-41}
+    m_Data: {r: 5.2109e-41, g: 5.2109e-41, b: 5.2109e-41, a: 5.2109e-41}
   - m_RefCount: 69
     m_Data: {r: 0.58178806, g: 0, b: 1, a: 0}
   - m_RefCount: 47
     m_Data: {r: 0, g: 0.43849897, b: 1, a: 0}
   - m_RefCount: 0
-    m_Data: {r: 3.5756e-41, g: 3.5756e-41, b: 3.5756e-41, a: 3.5756e-41}
+    m_Data: {r: 5.2109e-41, g: 5.2109e-41, b: 5.2109e-41, a: 5.2109e-41}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1964,6 +2018,52 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02f25e52870194d1daed1253f958f90f, type: 3}
+--- !u!1 &544533121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 544533122}
+  - component: {fileID: 544533123}
+  m_Layer: 0
+  m_Name: DisplayText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &544533122
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544533121}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1630391827}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &544533123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544533121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a12a8d3950417b44aca989c9e3f7675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiText: {fileID: 1630391828}
+  hintMessage: '{DogName} seems to be tired.'
 --- !u!1001 &576008198
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2401,6 +2501,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d02da8786e6143e79df64917a5f6740, type: 3}
+--- !u!114 &1000009218 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4155009446469981136, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+  m_PrefabInstance: {fileID: 2115496866}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1081993973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2784,6 +2895,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e30eacf64227443ab79aae08a4727a7, type: 3}
+--- !u!114 &1379856806 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4155009446469981136, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+  m_PrefabInstance: {fileID: 1647321252}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1387987372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2868,6 +2990,57 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1390648155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1390648156}
+  - component: {fileID: 1390648157}
+  m_Layer: 0
+  m_Name: DisplayText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1390648156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390648155}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -72.28, y: -4.71, z: -2.860911}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 122688977}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1390648157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390648155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a12a8d3950417b44aca989c9e3f7675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiText: {fileID: 1379856806}
+  hintMessage: '{DogName} cannot walk much longer.'
+--- !u!224 &1610995752 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3577056100912421309, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+  m_PrefabInstance: {fileID: 2115496866}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1630391825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3056,6 +3229,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.81
       objectReference: {fileID: 0}
+    - target: {fileID: 7486817435990368205, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_Name
+      value: DogNotWellText
+      objectReference: {fileID: 0}
     - target: {fileID: 8858765358571127947, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
       propertyPath: m_text
       value: Open the menu again and select follow to make your dog follow you again.
@@ -3084,7 +3261,10 @@ PrefabInstance:
     - {fileID: 3334397027928834070, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
     m_RemovedGameObjects:
     - {fileID: 5039015242891847415, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3577056100912421309, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 544533122}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
 --- !u!224 &1630391826 stripped
@@ -3092,6 +3272,22 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5558775687428024366, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
   m_PrefabInstance: {fileID: 1630391825}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &1630391827 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3577056100912421309, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+  m_PrefabInstance: {fileID: 1630391825}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1630391828 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4155009446469981136, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+  m_PrefabInstance: {fileID: 1630391825}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1647321252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3280,6 +3476,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.81
       objectReference: {fileID: 0}
+    - target: {fileID: 7486817435990368205, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_Name
+      value: DoorNotHereDogNotWellText
+      objectReference: {fileID: 0}
     - target: {fileID: 8858765358571127947, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
       propertyPath: m_text
       value: Open the menu again and select follow to make your dog follow you again.
@@ -3308,7 +3508,10 @@ PrefabInstance:
     - {fileID: 3334397027928834070, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
     m_RemovedGameObjects:
     - {fileID: 5039015242891847415, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3577056100912421309, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1390648156}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
 --- !u!224 &1647321253 stripped
@@ -9386,7 +9589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2017736135976079247, guid: 529fd1cee1b40473690122b6440f9160, type: 3}
       propertyPath: NextLevel
-      value: StartScene
+      value: GoodbyeScene
       objectReference: {fileID: 0}
     - target: {fileID: 5215369549015074746, guid: 529fd1cee1b40473690122b6440f9160, type: 3}
       propertyPath: m_RootOrder
@@ -9852,6 +10055,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.81
       objectReference: {fileID: 0}
+    - target: {fileID: 7486817435990368205, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_Name
+      value: DogVeryTiredText
+      objectReference: {fileID: 0}
     - target: {fileID: 8858765358571127947, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
       propertyPath: m_text
       value: Open the menu again and select follow to make your dog follow you again.
@@ -9880,7 +10087,10 @@ PrefabInstance:
     - {fileID: 3334397027928834070, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
     m_RemovedGameObjects:
     - {fileID: 5039015242891847415, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3577056100912421309, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 344904817}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
 --- !u!224 &2115496867 stripped
