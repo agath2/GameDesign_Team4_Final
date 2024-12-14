@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
     public Animator animator;
     public Rigidbody2D rb2D;
     private bool FaceRight = true; // determine which way player is facing.
-    public static float runSpeed = 6f;
+    public static float runSpeed = 10f;
     public bool isAlive = true;
     //public AudioSource WalkSFX;
     private Vector3 hMove;
