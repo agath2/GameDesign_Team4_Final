@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DogNaming.unity
     guid: ca81fb318c1d845b882e0e7687cd5cc6
+  - enabled: 1
+    path: Assets/Scenes/Lvl3-1.unity
+    guid: d961a0d9ffe2e4035b6789903349ed71
   m_configObjects: {}
