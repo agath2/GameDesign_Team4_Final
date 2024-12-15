@@ -32,8 +32,9 @@ public class DoorChange : MonoBehaviour
             hasKey = true;
             Destroy(other.gameObject);  // Destroy the key (since it's collected)
             Debug.Log("Key collected!");
+            StartCoroutine(OpenDoorAfterDelay());
         }
-        else if (other.gameObject.CompareTag("Player"))  // Assuming the player has the tag "Player"
+        if (other.gameObject.CompareTag("Player"))  // Assuming the player has the tag "Player"
         {
             if (hasKey && isLocked)  // If the player has the key and the door is locked
             {
@@ -71,6 +72,7 @@ public class DoorChange : MonoBehaviour
                 // doorOpened.SetActive(true);
                 // isLocked = false;
                 // SceneManager.LoadScene(NextLevel);
+                Debug.Log("trigger stay hasKey && isLocked");
                 StartCoroutine(OpenDoorAfterDelay());
                 Debug.Log("Door opened!");
             }
@@ -95,16 +97,18 @@ public class DoorChange : MonoBehaviour
 
     IEnumerator OpenDoorAfterDelay()
     {
-        
-
+        Debug.Log("In OpenDoorAfterDelay");
         if(!DoorOpen.isPlaying && !DoorUnlockedOpen.isPlaying){
+            Debug.Log("In 1");
             if(isLocked){
+                Debug.Log("In 2");
                 doorLocked.SetActive(false);
                 doorClosed.SetActive(true);
                 DoorOpen.Play();
                 yield return new WaitForSeconds(2f);
             } 
             else{
+                Debug.Log("In 3");
                 DoorUnlockedOpen.Play();
             }
             doorClosed.SetActive(false);
