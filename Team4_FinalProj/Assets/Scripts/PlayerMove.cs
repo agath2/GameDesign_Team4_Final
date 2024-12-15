@@ -10,6 +10,7 @@ public class PlayerMove : MonoBehaviour
     private Rigidbody2D rb2D;
     private bool FaceRight = true; // determine which way player is facing.
     public static float runSpeed = 10f;
+    public static float slopeSpeed = 7f;
     public bool isAlive = true;
     //public AudioSource WalkSFX;
     private Vector3 hMove;
@@ -22,6 +23,8 @@ public class PlayerMove : MonoBehaviour
     public AudioSource[] SFX_Steps;
 
     public GameObject particlesDust;
+
+    public bool topOfSlope = false;
 
     void Start()
     {
@@ -80,17 +83,19 @@ public class PlayerMove : MonoBehaviour
         }
     }
     public LayerMask groundLayer; // Assign this in the Inspector
-    public float slopeCheckDistance = 0.5f;
+    private float slopeCheckDistance = 2f;
     private float slopeDownAngle;
     private Vector2 slopeNormalPerp;
     private bool isOnSlope;
 
     void SlopeCheck()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, slopeCheckDistance, groundLayer);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, slopeCheckDistance, groundLayer);
+        Debug.Log(hit);
 
         if (hit)
         {
+            
             slopeNormalPerp = Vector2.Perpendicular(hit.normal).normalized;
             slopeDownAngle = Vector2.Angle(hit.normal, Vector2.up);
 
@@ -106,14 +111,34 @@ public class PlayerMove : MonoBehaviour
     {
         SlopeCheck();
 
-        if (isOnSlope && hMove.x != 0)
-        {
-            rb2D.velocity = new Vector2(runSpeed * slopeNormalPerp.x * Mathf.Sign(hMove.x), runSpeed * slopeNormalPerp.y);
-        }
-        else
-        {
+        if(slopeDownAngle == 0 && topOfSlope){
+            topOfSlope = false;
+            if(Input.GetButtonDown("Jump")){
+                rb2D.velocity = new Vector2(hMove.x * runSpeed, rb2D.velocity.y);
+            }
+            else{
+                rb2D.velocity = new Vector2(hMove.x * runSpeed, -runSpeed);
+            }
+            
+        } 
+        else if (slopeDownAngle != 0){
+            topOfSlope = true;
+            rb2D.velocity = new Vector2(hMove.x * slopeSpeed, rb2D.velocity.y);
+        } else {
+            topOfSlope = false;
             rb2D.velocity = new Vector2(hMove.x * runSpeed, rb2D.velocity.y);
         }
+
+        // if (isOnSlope && hMove.x != 0)
+        // {
+        //     // Debug.Log("isOnSlope and hMove");
+        //     rb2D.velocity = new Vector2(runSpeed * slopeNormalPerp.x * Mathf.Sign(hMove.x), runSpeed * slopeNormalPerp.y);
+        // }
+        // else
+        // {
+        //     // Debug.Log(rb2D.velocity.x + ", " + rb2D.velocity.y);
+        //     rb2D.velocity = new Vector2(hMove.x * runSpeed, rb2D.velocity.y);
+        // }
     }
 
     private void playerTurn()

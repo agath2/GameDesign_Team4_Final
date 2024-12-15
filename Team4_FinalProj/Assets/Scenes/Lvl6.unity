@@ -696,6 +696,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -4.708267
       objectReference: {fileID: 0}
+    - target: {fileID: 1945122303065184563, guid: 8e30eacf64227443ab79aae08a4727a7, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 2328195587407982183, guid: 8e30eacf64227443ab79aae08a4727a7, type: 3}
       propertyPath: launchForce
       value: 15
@@ -7597,7 +7601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2017736135976079247, guid: 529fd1cee1b40473690122b6440f9160, type: 3}
       propertyPath: NextLevel
-      value: EndScene
+      value: Lvl7
       objectReference: {fileID: 0}
     - target: {fileID: 2017736135976079247, guid: 529fd1cee1b40473690122b6440f9160, type: 3}
       propertyPath: doorClosed

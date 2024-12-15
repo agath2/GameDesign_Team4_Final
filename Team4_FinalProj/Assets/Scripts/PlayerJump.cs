@@ -15,6 +15,7 @@ public class PlayerJump : MonoBehaviour {
     public bool isAlive = true;
     private DestinationSelector destinationSelector;
     private RightClickOptions RightClick;
+    public float overlapSize = 0.3f;
 
 
     //public AudioSource JumpSFX;
@@ -69,8 +70,8 @@ public class PlayerJump : MonoBehaviour {
     }
 
     public bool IsGrounded() {
-        Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, 0.1f, groundLayer);
-        Collider2D enemyCheck = Physics2D.OverlapCircle(feet.position, 0.1f, enemyLayer);
+        Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, overlapSize, groundLayer);
+        Collider2D enemyCheck = Physics2D.OverlapCircle(feet.position, overlapSize, enemyLayer);
         if ((groundCheck != null) || (enemyCheck != null)) {
             //Debug.Log("I am trouching ground!");
             jumpTimes = 0;

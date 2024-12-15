@@ -558,6 +558,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1945122303065184563, guid: 8e30eacf64227443ab79aae08a4727a7, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 1945122303065184563, guid: 8e30eacf64227443ab79aae08a4727a7, type: 3}
       propertyPath: SFX_Steps.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -654,11 +658,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4749800984396086422, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
       propertyPath: m_Size.x
-      value: 15.056454
+      value: 15.207178
+      objectReference: {fileID: 0}
+    - target: {fileID: 4749800984396086422, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_Size.y
+      value: 13.03998
       objectReference: {fileID: 0}
     - target: {fileID: 4749800984396086422, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
       propertyPath: m_Offset.x
-      value: 3.584875
+      value: 0.5955019
+      objectReference: {fileID: 0}
+    - target: {fileID: 4749800984396086422, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
+      propertyPath: m_Offset.y
+      value: 3.2336054
       objectReference: {fileID: 0}
     - target: {fileID: 5039015242891847415, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
       propertyPath: m_IsActive
