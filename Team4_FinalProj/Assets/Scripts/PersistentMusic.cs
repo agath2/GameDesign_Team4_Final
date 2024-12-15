@@ -4,10 +4,9 @@ using UnityEngine.SceneManagement;
 public class PersistentMusic : MonoBehaviour
 {
     private static PersistentMusic instance;
-    private string sceneName;
+    private string sceneName = "";
     public AudioSource musicScene1;
     public AudioSource musicScene2;
-    public AudioSource musicEndScene;
     //public AudioSource menuMusic;
 
     void Awake()
@@ -23,18 +22,14 @@ public class PersistentMusic : MonoBehaviour
         }
     }
 
-    void Start(){
+    void Update(){
+        if (SceneManager.GetActiveScene().name == sceneName) return;
         sceneName = SceneManager.GetActiveScene().name;
         
         if (sceneName == "Lvl4"){
             musicScene1.Stop();
             musicScene2.Play();
-        }
-        else if (sceneName == "EndScene") {
-            musicScene2.Stop();
-            musicEndScene.Play();
-        }
-        else if (sceneName == "StartScene"){
+        } else if (sceneName == "EndScene") {
             Destroy(gameObject);
         }
 
