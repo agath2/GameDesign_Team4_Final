@@ -4861,7 +4861,7 @@ Transform:
   m_Children:
   - {fileID: 4305130806662111615}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3729091970073424027
 SpriteRenderer:
@@ -4973,4 +4973,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 1
-  pickupSound: {fileID: 8300000, guid: 2f5b262f2e3ec4861b7a6f274d671f1e, type: 3}
+  pickupSound: {fileID: 0}

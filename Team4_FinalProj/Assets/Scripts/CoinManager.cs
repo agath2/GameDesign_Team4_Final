@@ -6,6 +6,7 @@ public class CoinManager : MonoBehaviour
     public static CoinManager instance;  // Singleton instance for easy access
     public int totalCoins = 0;          // The player's total coin count
     public Text coinText;               // Reference to the UI Text element to display coins
+    public AudioSource pickupSound;
 
 private void Awake()
 {
@@ -26,6 +27,7 @@ private void Awake()
     {
         totalCoins += amount;         // Increase the coin count
         UpdateCoinUI();               // Update the coin count on UI
+        pickupSound.Play();
     }
 
     // Method to update the coin count on the UI

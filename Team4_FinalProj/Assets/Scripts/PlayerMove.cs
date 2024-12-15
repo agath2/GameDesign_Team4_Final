@@ -40,7 +40,7 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-         if ((Input.GetAxisRaw("Horizontal")!= 0) || (Input.GetAxisRaw("Vertical")!= 0)){
+         if ((Input.GetAxisRaw("Horizontal")!= 0)){
             PlaySteps();
         } else {
             StopSteps();
@@ -113,10 +113,13 @@ public class PlayerMove : MonoBehaviour
 
         if(slopeDownAngle == 0 && topOfSlope){
             topOfSlope = false;
-            if(Input.GetButtonDown("Jump")){
-                rb2D.velocity = new Vector2(hMove.x * runSpeed, rb2D.velocity.y);
-            }
-            else{
+            // if(Input.GetButtonDown("Jump")){
+            //     rb2D.velocity = new Vector2(hMove.x * runSpeed, rb2D.velocity.y);
+            // }
+            // else{
+            //     rb2D.velocity = new Vector2(hMove.x * runSpeed, -runSpeed);
+            // }
+            if(!Input.GetButtonDown("Jump")){
                 rb2D.velocity = new Vector2(hMove.x * runSpeed, -runSpeed);
             }
             
