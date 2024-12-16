@@ -1,45 +1,70 @@
 using UnityEngine;
-using UnityEngine.UI;  // For UI components like Text
 using TMPro;
 
 public class CoinManager : MonoBehaviour
 {
     public static CoinManager instance;  // Singleton instance for easy access
-    public int totalCoins = 0;          // The player's total coin count
-    // public Text coinText;               // Reference to the UI Text element to display coins
+
+    // Player's total coin count (persistent across levels)
+    public int totalCoins = 0;
+
+    // Coins collected in the current level (reset when level is completed or player dies)
+    private int levelCoins = 0;
+
+    // Reference to the UI text element to display coins
     public TextMeshProUGUI coinText;
+
+    // Audio source for coin pickup sound
     public AudioSource pickupSound;
 
-private void Awake()
-{
-    // Ensures there's only one instance of CoinManager (Singleton pattern)
-    if (instance == null)
+    private void Awake()
     {
-        instance = this;
-        DontDestroyOnLoad(gameObject);  // Make this object persist across scenes
+        // Singleton pattern: Ensure there's only one instance of CoinManager
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);  // This will persist across scenes
+        }
+        else
+        {
+            Destroy(gameObject);  // Destroy any duplicate instances
+        }
     }
-    else
-    {
-        Destroy(gameObject);  // If there's already an instance, destroy the new one
-    }
-}
 
-    // Method to add coins to the player's total
+    // Method to add coins to the current level
     public void AddCoins(int amount)
     {
-        totalCoins += amount;         // Increase the coin count
-        UpdateCoinUI();               // Update the coin count on UI
-        pickupSound.Play();
+        levelCoins += amount;  // Add the coin amount to levelCoins
+        UpdateCoinUI();        // Update the coin count displayed on the UI
+        pickupSound.Play();    // Play the pickup sound when a coin is collected
     }
 
-    // Method to update the coin count on the UI
+    // Method to reset the coins collected during the current level (called on death)
+    public void PlayerDied()
+    {
+        levelCoins = 0;  // Reset the levelCoins to 0, but DO NOT reset totalCoins
+        UpdateCoinUI();  // Update the UI to reflect the reset value
+    }
+
+    // Method to add the coins from the current level to the total (called at level completion)
+    public void EndLevel()
+    {
+        totalCoins += levelCoins;  // Add the current level's coins to totalCoins
+        levelCoins = 0;             // Reset the levelCoins after completing the level
+        UpdateCoinUI();             // Update the UI to show the new total
+    }
+
+    // Method to update the coin UI
     private void UpdateCoinUI()
     {
-        if (coinText != null)
-        {
-            // coinText.text = "Coins x" + totalCoins.ToString();  // Display updated coin count
-            coinText.text = "x" + totalCoins.ToString();  // Display updated coin count
+        // Display the total coins, plus coins collected during the current level
+        coinText.text = "x" + (totalCoins + levelCoins).ToString();
+    }
 
-        }
+    // Optional: Call this method when a new level starts to reset the level coins
+    public void StartNewLevel()
+    {
+        levelCoins = 0;  // Reset level coins at the start of a new level
+        UpdateCoinUI();  // Update UI to show the reset value
     }
 }
