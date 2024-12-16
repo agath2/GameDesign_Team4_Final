@@ -7795,23 +7795,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1017703801789931182, guid: 2d02da8786e6143e79df64917a5f6740, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.88
+      value: -11.1
       objectReference: {fileID: 0}
     - target: {fileID: 1017703801789931182, guid: 2d02da8786e6143e79df64917a5f6740, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.95
+      value: -10.14
       objectReference: {fileID: 0}
     - target: {fileID: 1689500567124777258, guid: 2d02da8786e6143e79df64917a5f6740, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.1
+      value: -35.67
       objectReference: {fileID: 0}
     - target: {fileID: 1689500567124777258, guid: 2d02da8786e6143e79df64917a5f6740, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.7
+      value: -7.79
       objectReference: {fileID: 0}
     - target: {fileID: 3042692839637354222, guid: 2d02da8786e6143e79df64917a5f6740, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.43
+      value: -3.68
       objectReference: {fileID: 0}
     - target: {fileID: 3042692839637354222, guid: 2d02da8786e6143e79df64917a5f6740, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9937,6 +9937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalCoins: 0
+  levelCoins: 0
   coinText: {fileID: 0}
   pickupSound: {fileID: 0}
 --- !u!4 &1898207822

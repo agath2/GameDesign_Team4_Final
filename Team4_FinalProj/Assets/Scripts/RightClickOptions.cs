@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class RightClickOptions : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class RightClickOptions : MonoBehaviour
     public float fetchableRange = 4f;
     public bool useSelector = false;
     public AudioSource DogBarkCommandAudio;
+    private EventSystem eventSystem;       // Reference to the Event System
 
     public bool isMenuActive = false;
 
@@ -28,6 +30,7 @@ public class RightClickOptions : MonoBehaviour
         followButton.onClick.AddListener(OnFollowClicked);
         stayButton.onClick.AddListener(OnStayClicked);
         fetchButton.onClick.AddListener(OnFetchClicked);
+        eventSystem = EventSystem.current;  // Get the current Event System
 
 
     }
@@ -39,6 +42,10 @@ public class RightClickOptions : MonoBehaviour
         isMenuActive = true;
         optionMenu.transform.position = position;
         mousePosition = position;
+        if (goHereButton != null && eventSystem != null)
+        {
+            eventSystem.SetSelectedGameObject(goHereButton.gameObject);
+        }
     }
 
     void Update()
