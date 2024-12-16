@@ -626,6 +626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalCoins: 0
+  levelCoins: 0
   coinText: {fileID: 0}
   pickupSound: {fileID: 0}
 --- !u!4 &555161520
@@ -1645,14 +1646,6 @@ PrefabInstance:
     - target: {fileID: 1953765916124894746, guid: 02f25e52870194d1daed1253f958f90f, type: 3}
       propertyPath: m_Name
       value: Dog
-      objectReference: {fileID: 0}
-    - target: {fileID: 4661570488360258879, guid: 02f25e52870194d1daed1253f958f90f, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4661570488360258879, guid: 02f25e52870194d1daed1253f958f90f, type: 3}
-      propertyPath: jumpForce
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7767379128529325709, guid: 02f25e52870194d1daed1253f958f90f, type: 3}
       propertyPath: m_RootOrder

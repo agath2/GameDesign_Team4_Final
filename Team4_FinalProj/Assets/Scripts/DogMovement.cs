@@ -19,6 +19,7 @@ public class DogMovement : MonoBehaviour
     public GameObject[] treatList;
     private MapManager mapManager;
     public bool walking = false;
+    public AudioSource DogBarkFetchedAudio;
 
     public Vector2 lastPosition;
     public float timeSinceLastMove = 0f;
@@ -28,6 +29,8 @@ public class DogMovement : MonoBehaviour
     private GameObject currentFetchable;
     public float fetchableRange = 4f;
     public bool useSelector = false;
+
+    
     
 
     void Start()
@@ -239,6 +242,8 @@ public class DogMovement : MonoBehaviour
                 currentFetchable.SetActive(true); // Ensure the object is visible after being picked up
 
                 Debug.Log("Object picked up and now following the dog: " + currentFetchable.name);
+
+                DogBarkFetchedAudio.Play();
 
                 Follow();
 

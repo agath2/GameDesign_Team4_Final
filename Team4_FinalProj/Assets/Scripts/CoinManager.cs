@@ -67,4 +67,8 @@ public class CoinManager : MonoBehaviour
         levelCoins = 0;  // Reset level coins at the start of a new level
         UpdateCoinUI();  // Update UI to show the reset value
     }
+
+    public int GetFinalTotal(){
+        return totalCoins;
+    }
 }
