@@ -11829,6 +11829,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6910053855147255589, guid: 881af7618d83e4144b6c1215b966287c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910053855147255589, guid: 881af7618d83e4144b6c1215b966287c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759515841837412349, guid: 881af7618d83e4144b6c1215b966287c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759515841837412349, guid: 881af7618d83e4144b6c1215b966287c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759515841837412349, guid: 881af7618d83e4144b6c1215b966287c, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8962850029001533052, guid: 881af7618d83e4144b6c1215b966287c, type: 3}
       propertyPath: mixer
       value: 
@@ -11841,6 +11861,30 @@ PrefabInstance:
       propertyPath: pauseMenuPanel
       value: 
       objectReference: {fileID: 148808645}
+    - target: {fileID: 9108061622576068047, guid: 881af7618d83e4144b6c1215b966287c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9108061622576068047, guid: 881af7618d83e4144b6c1215b966287c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9108061622576068047, guid: 881af7618d83e4144b6c1215b966287c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9108061622576068047, guid: 881af7618d83e4144b6c1215b966287c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9108061622576068047, guid: 881af7618d83e4144b6c1215b966287c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9108061622576068047, guid: 881af7618d83e4144b6c1215b966287c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
