@@ -2684,6 +2684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 803728730}
   - component: {fileID: 803728729}
+  - component: {fileID: 803728731}
   m_Layer: 0
   m_Name: CutSceneTrigger
   m_TagString: Untagged
@@ -2763,6 +2764,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &803728731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803728727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65a82a877fd88b41919b7293e8c8e27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutsceneSceneName: CutScene
 --- !u!1001 &809661698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10062,6 +10076,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 1491420486532658608, guid: 529fd1cee1b40473690122b6440f9160, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2017736135976079247, guid: 529fd1cee1b40473690122b6440f9160, type: 3}
       propertyPath: hasKey
       value: 1
@@ -10073,6 +10091,14 @@ PrefabInstance:
     - target: {fileID: 2017736135976079247, guid: 529fd1cee1b40473690122b6440f9160, type: 3}
       propertyPath: NextLevel
       value: GoodbyeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017736135976079247, guid: 529fd1cee1b40473690122b6440f9160, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902406311848341226, guid: 529fd1cee1b40473690122b6440f9160, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4281139264418012874, guid: 529fd1cee1b40473690122b6440f9160, type: 3}
       propertyPath: m_Color.b
