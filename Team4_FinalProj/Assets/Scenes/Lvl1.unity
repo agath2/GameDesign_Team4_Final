@@ -10776,11 +10776,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 503454324352653065, guid: 8792ad9947680407f81a0a17df47b3c1, type: 3}
       propertyPath: m_Size.y
-      value: 7.4863176
+      value: 7.4080863
       objectReference: {fileID: 0}
     - target: {fileID: 503454324352653065, guid: 8792ad9947680407f81a0a17df47b3c1, type: 3}
       propertyPath: m_Offset.y
-      value: 2.5237784
+      value: 2.4846628
       objectReference: {fileID: 0}
     - target: {fileID: 4445259164309135695, guid: 8792ad9947680407f81a0a17df47b3c1, type: 3}
       propertyPath: m_Name
@@ -12125,6 +12125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalCoins: 0
+  levelCoins: 0
   coinText: {fileID: 0}
   pickupSound: {fileID: 0}
 --- !u!4 &1954040161

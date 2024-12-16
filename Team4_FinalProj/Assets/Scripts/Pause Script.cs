@@ -75,6 +75,7 @@ public class PauseMenuController : MonoBehaviour
     {
         Time.timeScale = 1f;  // Ensure the game time is resumed before restarting
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);  // Reload the current scene
+        CoinManager.instance.StartNewLevel();
     }
 
     // Function to quit the game (optional)
