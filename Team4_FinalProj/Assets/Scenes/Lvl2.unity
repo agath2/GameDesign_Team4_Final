@@ -9934,7 +9934,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8858765358571127947, guid: 1a51e119b32ee4ab7b2fb871b624bbc5, type: 3}
       propertyPath: m_text
-      value: "Press button 0 to open the dog menu. \nUse the left and right joystick
+      value: "Press button 0 to open the dog commands. \nUse the left and right joystick
         to cycle through available locations on the screen. \nTo select a location,
         press button 0 again to open the menu, then use the up and down joystick
         to choose the \"Go Here\" option. \nPress button 0 to confirm and send the
