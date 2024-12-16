@@ -10932,20 +10932,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 503454324352653065, guid: 8792ad9947680407f81a0a17df47b3c1, type: 3}
-      propertyPath: m_Size.x
-      value: 0.7871983
-      objectReference: {fileID: 0}
-    - target: {fileID: 503454324352653065, guid: 8792ad9947680407f81a0a17df47b3c1, type: 3}
       propertyPath: m_Size.y
-      value: 7.359609
-      objectReference: {fileID: 0}
-    - target: {fileID: 503454324352653065, guid: 8792ad9947680407f81a0a17df47b3c1, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.031046987
+      value: 7.4863176
       objectReference: {fileID: 0}
     - target: {fileID: 503454324352653065, guid: 8792ad9947680407f81a0a17df47b3c1, type: 3}
       propertyPath: m_Offset.y
-      value: 2.6283648
+      value: 2.5237784
       objectReference: {fileID: 0}
     - target: {fileID: 4445259164309135695, guid: 8792ad9947680407f81a0a17df47b3c1, type: 3}
       propertyPath: m_Name
@@ -12535,6 +12527,10 @@ PrefabInstance:
     - target: {fileID: 4993629749403009408, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258539200140286253, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
+      propertyPath: m_text
+      value: 'Press W or the Up Arrow to climb the ladder. '
       objectReference: {fileID: 0}
     - target: {fileID: 6374401118059260570, guid: d89e32fa02a374f8b823ec2bda7e8eda, type: 3}
       propertyPath: m_IsActive

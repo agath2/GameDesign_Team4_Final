@@ -25,6 +25,7 @@ public class PlayerMove : MonoBehaviour
     public GameObject particlesDust;
 
     public bool topOfSlope = false;
+    public bool isClimbing = false;
 
     void Start()
     {
@@ -60,7 +61,7 @@ public class PlayerMove : MonoBehaviour
         if (isAlive == true)
         {
             //stransform.position += hMove * runSpeed * Time.deltaTime;
-
+            animator.SetBool("isClimbing", isClimbing);
             animator.SetFloat("xVelocity", Mathf.Abs(hMove.x));
 
             if (hMove.x < 0 && FaceRight)
@@ -166,11 +167,19 @@ public class PlayerMove : MonoBehaviour
             { // Pressing up
                 Debug.Log("Climbing up the ladder");
                 rb2D.velocity = new Vector2(0f, 10f);
+                isClimbing = true;
+                // if(!animator.GetBool("isClimbing")){
+                //     animator.SetBool("isClimbing", true);
+                // }
             }
             else if (verticalInput < 0)
             { // Pressing down
                 Debug.Log("Climbing down the ladder");
                 rb2D.velocity = new Vector2(0f, -10f);
+                isClimbing = true;
+                // if(!animator.GetBool("isClimbing")){
+                //     animator.SetBool("isClimbing", true);
+                // }
             }
             else
             {
@@ -185,6 +194,7 @@ public class PlayerMove : MonoBehaviour
         if (collider.gameObject.tag == "Ladder")
         {
             rb2D.velocity = new Vector2(0f, 0f);
+            isClimbing = false;
         }
     }
 
