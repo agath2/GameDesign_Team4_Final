@@ -71,17 +71,14 @@ public class DoorChange : MonoBehaviour
 
     IEnumerator OpenDoorAfterDelay()
     {
-        Debug.Log("In OpenDoorAfterDelay");
-
+        Rigidbody2D playerRB = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>();
+        playerRB.constraints = RigidbodyConstraints2D.FreezePosition;
         // Only allow door animation and sound if neither door sounds are already playing
         if (!DoorOpen.isPlaying && !DoorUnlockedOpen.isPlaying)
         {
-            Debug.Log("In 1");
-
             // If the door is locked
             if (isLocked)
             {
-                Debug.Log("In 2");
                 doorLocked.SetActive(false);
                 doorClosed.SetActive(true);
                 DoorOpen.Play();
@@ -89,7 +86,6 @@ public class DoorChange : MonoBehaviour
             }
             else
             {
-                Debug.Log("In 3");
                 DoorUnlockedOpen.Play();
             }
 
