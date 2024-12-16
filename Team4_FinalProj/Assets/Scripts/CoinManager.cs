@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;  // For UI components like Text
+using TMPro;
 
 public class CoinManager : MonoBehaviour
 {
     public static CoinManager instance;  // Singleton instance for easy access
     public int totalCoins = 0;          // The player's total coin count
-    public Text coinText;               // Reference to the UI Text element to display coins
+    // public Text coinText;               // Reference to the UI Text element to display coins
+    public TextMeshProUGUI coinText;
     public AudioSource pickupSound;
 
 private void Awake()
@@ -35,7 +37,9 @@ private void Awake()
     {
         if (coinText != null)
         {
-            coinText.text = "Coins x" + totalCoins.ToString();  // Display updated coin count
+            // coinText.text = "Coins x" + totalCoins.ToString();  // Display updated coin count
+            coinText.text = "x" + totalCoins.ToString();  // Display updated coin count
+
         }
     }
 }
