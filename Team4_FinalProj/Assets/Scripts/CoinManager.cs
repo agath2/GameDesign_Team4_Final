@@ -9,7 +9,7 @@ public class CoinManager : MonoBehaviour
     public int totalCoins = 0;
 
     // Coins collected in the current level (reset when level is completed or player dies)
-    private int levelCoins = 0;
+    public int levelCoins = 0;
 
     // Reference to the UI text element to display coins
     public TextMeshProUGUI coinText;
@@ -66,5 +66,9 @@ public class CoinManager : MonoBehaviour
     {
         levelCoins = 0;  // Reset level coins at the start of a new level
         UpdateCoinUI();  // Update UI to show the reset value
+    }
+
+    public int GetFinalTotal(){
+        return totalCoins;
     }
 }

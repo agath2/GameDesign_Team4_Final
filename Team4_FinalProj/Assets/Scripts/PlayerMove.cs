@@ -18,6 +18,7 @@ public class PlayerMove : MonoBehaviour
     //public SpriteRenderer spriteRenderer;
     private DestinationSelector destinationSelector;
     private RightClickOptions RightClick;
+    private PauseMenuController Pause;
 
     private AudioSource StepToPlay;
     public AudioSource[] SFX_Steps;
@@ -52,6 +53,10 @@ public class PlayerMove : MonoBehaviour
             return;
         }
         if ((RightClick != null && RightClick.isMenuActive))
+        {
+            return;
+        }
+        if ((Pause != null && Pause.isPaused))
         {
             return;
         }
@@ -92,7 +97,6 @@ public class PlayerMove : MonoBehaviour
     void SlopeCheck()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, slopeCheckDistance, groundLayer);
-        Debug.Log(hit);
 
         if (hit)
         {

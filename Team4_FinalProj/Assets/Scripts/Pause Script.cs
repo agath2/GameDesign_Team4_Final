@@ -2,14 +2,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;  // To manage scene loading
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.EventSystems;
 
 public class PauseMenuController : MonoBehaviour
 {
     public GameObject pauseMenuPanel;  // Reference to the pause menu panel
-    private bool isPaused = false;     // Track if the game is paused
+    public bool isPaused = false;     // Track if the game is paused
     public AudioMixer mixer;
     public static float volumeLevel = 1.0f;
     private Slider sliderVolumeCtrl;
+    private EventSystem eventSystem;       // Reference to the Event System
+    public Button resumeButton;            // Reference to the "Resume" button
+
 
     void Awake(){
         pauseMenuPanel.SetActive(true); // so slider can be set
@@ -18,6 +22,18 @@ public class PauseMenuController : MonoBehaviour
         if (sliderTemp != null){
             sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
             sliderVolumeCtrl.value = volumeLevel;
+   
+        }
+        eventSystem = EventSystem.current;  // Get the current Event System
+    }
+
+    private void AdjustSliderWithController()
+    {
+        float horizontalInput = Input.GetAxis("Horizontal");
+        if (Mathf.Abs(horizontalInput) > 0.1f)
+        {
+            sliderVolumeCtrl.value += horizontalInput * Time.unscaledDeltaTime; // Adjust slider smoothly
+            SetLevel(sliderVolumeCtrl.value);
         }
     }
 
@@ -33,13 +49,21 @@ public class PauseMenuController : MonoBehaviour
         if (Input.GetButtonDown("Cancel")){
             TogglePauseMenu();
         }
+        if (isPaused && sliderVolumeCtrl != null)
+        {
+            AdjustSliderWithController();
+        }
+
     }
+
 
     // Set volume level
     public void SetLevel(float sliderValue){
         mixer.SetFloat("MusicVolume", Mathf.Log10 (sliderValue) * 20);
         volumeLevel = sliderValue;
     }
+
+
 
     // Function to toggle the pause menu
     public void TogglePauseMenu()
@@ -57,7 +81,12 @@ public class PauseMenuController : MonoBehaviour
     // Pause the game and show the pause menu
     public void PauseGame()
     {
-        isPaused = true;
+        if (resumeButton != null && eventSystem != null)
+        {
+            eventSystem.SetSelectedGameObject(resumeButton.gameObject);
+        }
+   
+    isPaused = true;
         pauseMenuPanel.SetActive(true);  // Show the pause menu
         Time.timeScale = 0f;  // Pause the game (stops all game physics and time-based actions)
     }
@@ -75,6 +104,7 @@ public class PauseMenuController : MonoBehaviour
     {
         Time.timeScale = 1f;  // Ensure the game time is resumed before restarting
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);  // Reload the current scene
+        CoinManager.instance.StartNewLevel();
     }
 
     // Function to quit the game (optional)
