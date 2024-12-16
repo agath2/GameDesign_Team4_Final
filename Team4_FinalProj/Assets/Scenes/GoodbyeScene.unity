@@ -307,6 +307,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6365753195128477358, guid: 881af7618d83e4144b6c1215b966287c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6910053855147255589, guid: 881af7618d83e4144b6c1215b966287c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -4328,6 +4332,10 @@ PrefabInstance:
     - target: {fileID: 3495552502180266075, guid: 3ccd5cac6466049a0818e96a4b3b8e18, type: 3}
       propertyPath: m_Name
       value: OptionMenuCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3495552502180266075, guid: 3ccd5cac6466049a0818e96a4b3b8e18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4150888510614126512, guid: 3ccd5cac6466049a0818e96a4b3b8e18, type: 3}
       propertyPath: m_IsActive
