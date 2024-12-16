@@ -32,7 +32,7 @@ Transform:
   - {fileID: 126082596493630480}
   - {fileID: 7484567418519383513}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3885273547312723801
 MonoBehaviour:
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalCoins: 0
-  coinText: {fileID: 0}
+  coinText: {fileID: 700124904425861573}
   pickupSound: {fileID: 941844197793201124}
 --- !u!1 &4048911801441274988
 GameObject:
