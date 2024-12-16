@@ -2667,14 +2667,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3240838426458929022, guid: 8ae835b4b4cb34f55ab05c79fe72ba8b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 799604268}
+      addedObject: {fileID: 803728728}
   m_SourcePrefab: {fileID: 100100000, guid: 8ae835b4b4cb34f55ab05c79fe72ba8b, type: 3}
 --- !u!1 &799604267 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3240838426458929022, guid: 8ae835b4b4cb34f55ab05c79fe72ba8b, type: 3}
   m_PrefabInstance: {fileID: 799604266}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &799604268
 --- !u!1 &803728727
 GameObject:
   m_ObjectHideFlags: 0
@@ -2685,7 +2684,6 @@ GameObject:
   m_Component:
   - component: {fileID: 803728730}
   - component: {fileID: 803728729}
-  - component: {fileID: 803728728}
   m_Layer: 0
   m_Name: CutSceneTrigger
   m_TagString: Untagged
@@ -2705,13 +2703,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b70ac1057f1c4a4ead8782073dfc59b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_GameObject: {fileID: 803728727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b65a82a877fd88b41919b7293e8c8e27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cutsceneSceneName: CutScene
 --- !u!61 &803728729
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2770,7 +2761,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &809661698
 PrefabInstance:
@@ -2892,15 +2883,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2379917353254501690, guid: a3a38710bd1b84826849b8735023a9de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 40
+      value: 109.3
       objectReference: {fileID: 0}
     - target: {fileID: 2379917353254501690, guid: a3a38710bd1b84826849b8735023a9de, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.9
+      value: -4.4
       objectReference: {fileID: 0}
     - target: {fileID: 3810152244003703576, guid: a3a38710bd1b84826849b8735023a9de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.1
+      value: -11.4
       objectReference: {fileID: 0}
     - target: {fileID: 3810152244003703576, guid: a3a38710bd1b84826849b8735023a9de, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2908,7 +2899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5499246581409235123, guid: a3a38710bd1b84826849b8735023a9de, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5499246581409235123, guid: a3a38710bd1b84826849b8735023a9de, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3293,21 +3284,9 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -3.8
       objectReference: {fileID: 0}
-    - target: {fileID: 1489977801316826331, guid: 8e30eacf64227443ab79aae08a4727a7, type: 3}
-      propertyPath: m_Size.x
-      value: 4.5975122
-      objectReference: {fileID: 0}
-    - target: {fileID: 1489977801316826331, guid: 8e30eacf64227443ab79aae08a4727a7, type: 3}
-      propertyPath: m_Size.y
-      value: 2.858143
-      objectReference: {fileID: 0}
-    - target: {fileID: 1489977801316826331, guid: 8e30eacf64227443ab79aae08a4727a7, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.15211938
-      objectReference: {fileID: 0}
-    - target: {fileID: 1489977801316826331, guid: 8e30eacf64227443ab79aae08a4727a7, type: 3}
-      propertyPath: m_Offset.y
-      value: -4.708267
+    - target: {fileID: 1945122303065184563, guid: 8e30eacf64227443ab79aae08a4727a7, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 2328195587407982183, guid: 8e30eacf64227443ab79aae08a4727a7, type: 3}
       propertyPath: launchForce
