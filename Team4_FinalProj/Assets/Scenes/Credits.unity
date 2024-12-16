@@ -1605,7 +1605,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Programming & Level Design
+  m_text: Programming + Level Design
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 58666f7184f7c4193b843c796821ce78, type: 2}
   m_sharedMaterial: {fileID: -7680494977216026995, guid: 58666f7184f7c4193b843c796821ce78, type: 2}
@@ -1875,7 +1875,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Programming & Level Design
+  m_text: Programming + Level Design
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 58666f7184f7c4193b843c796821ce78, type: 2}
   m_sharedMaterial: {fileID: -7680494977216026995, guid: 58666f7184f7c4193b843c796821ce78, type: 2}
