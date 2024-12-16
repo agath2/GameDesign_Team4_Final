@@ -1368,6 +1368,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4480f12d83434c44bd9f573cb888b9e, type: 3}
+--- !u!4 &332976376 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2379917353254501690, guid: a3a38710bd1b84826849b8735023a9de, type: 3}
+  m_PrefabInstance: {fileID: 781007156}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &335842077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1673,7 +1678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3940866708419230079, guid: 8ae835b4b4cb34f55ab05c79fe72ba8b, type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 3940866708419230079, guid: 8ae835b4b4cb34f55ab05c79fe72ba8b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2075,6 +2080,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &649528525 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3810152244003703576, guid: a3a38710bd1b84826849b8735023a9de, type: 3}
+  m_PrefabInstance: {fileID: 781007156}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &781007156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9263,8 +9273,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camSpeed: 4
-  minXBoundary: {fileID: 0}
-  maxXBoundary: {fileID: 0}
+  minXBoundary: {fileID: 649528525}
+  maxXBoundary: {fileID: 332976376}
 --- !u!81 &1718923337
 AudioListener:
   m_ObjectHideFlags: 0

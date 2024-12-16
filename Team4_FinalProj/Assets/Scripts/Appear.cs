@@ -27,14 +27,19 @@ public class Appear : MonoBehaviour
     // Called when another Collider2D enters the trigger zone
     private void OnTriggerEnter2D(Collider2D other)
     {
-        mainPanel.SetActive(true); // Show the canvas
-        StartCoroutine(Fade(canvasGroup, fadeDelay, true)); // Fade In
+        if (other.CompareTag("Player")){
+            mainPanel.SetActive(true); // Show the canvas
+            StopAllCoroutines();
+            StartCoroutine(Fade(canvasGroup, fadeDelay, true)); // Fade In
+        }
     }
 
     // Called when the Collider2D exits the trigger zone
     private void OnTriggerExit2D(Collider2D other)
     {
-        StartCoroutine(FadeAndHide(canvasGroup, fadeDelay)); // Fade Out and Hide
+        if (other.CompareTag("Player")){
+            StartCoroutine(FadeAndHide(canvasGroup, fadeDelay)); // Fade Out and Hide
+        }
     }
 
     IEnumerator Fade(CanvasGroup canvasGroup, float fadeTime, bool fadeIn)

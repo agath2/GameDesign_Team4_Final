@@ -13,7 +13,7 @@ public class Credits : MonoBehaviour
     {
         StartCoroutine(ReturnToMenu());
         int finalTotal = CoinManager.instance.GetFinalTotal();
-        coinText.text = "You collected " + finalTotal.ToString() + "/10 coins";
+        coinText.text = "You collected " + finalTotal.ToString() + "/30 coins";
     }
 
     // Update is called once per frame

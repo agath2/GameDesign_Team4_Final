@@ -256,23 +256,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &298853624 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3240838426458929022, guid: 8ae835b4b4cb34f55ab05c79fe72ba8b, type: 3}
-  m_PrefabInstance: {fileID: 1087699580}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &298853626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 298853624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b70ac1057f1c4a4ead8782073dfc59b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &314366106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -350,6 +333,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3a38710bd1b84826849b8735023a9de, type: 3}
+--- !u!4 &314366107 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2379917353254501690, guid: a3a38710bd1b84826849b8735023a9de, type: 3}
+  m_PrefabInstance: {fileID: 314366106}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &314366108 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3810152244003703576, guid: a3a38710bd1b84826849b8735023a9de, type: 3}
+  m_PrefabInstance: {fileID: 314366106}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &343206086 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3410841928563141800, guid: 784351d6d700a468aa0ae3e0dad3e6f8, type: 3}
@@ -4922,10 +4915,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3240838426458929022, guid: 8ae835b4b4cb34f55ab05c79fe72ba8b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 298853626}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ae835b4b4cb34f55ab05c79fe72ba8b, type: 3}
 --- !u!1 &1138376182
 GameObject:
@@ -6672,8 +6662,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camSpeed: 4
-  minXBoundary: {fileID: 0}
-  maxXBoundary: {fileID: 0}
+  minXBoundary: {fileID: 314366108}
+  maxXBoundary: {fileID: 314366107}
 --- !u!81 &1718923337
 AudioListener:
   m_ObjectHideFlags: 0
