@@ -26,7 +26,11 @@ public class PersistentMusic : MonoBehaviour
         if (SceneManager.GetActiveScene().name == sceneName) return;
         sceneName = SceneManager.GetActiveScene().name;
         
-        if (sceneName == "Lvl4"){
+        if (sceneName == "DogNaming") {
+            musicScene1.Stop();
+        } else if (sceneName == "Lvl3") {
+            musicScene1.Play();
+        } else if (sceneName == "Lvl4"){
             musicScene1.Stop();
             musicScene2.Play();
         } else if (sceneName == "EndScene") {
