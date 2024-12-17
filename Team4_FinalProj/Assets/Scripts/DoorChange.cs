@@ -36,6 +36,7 @@ public class DoorChange : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player"))  // Assuming the player has the tag "Player"
         {
+            Debug.Log("Player at door");
             if (hasKey && isLocked)  // If the player has the key and the door is locked
             {
                 StartCoroutine(OpenDoorAfterDelay());
