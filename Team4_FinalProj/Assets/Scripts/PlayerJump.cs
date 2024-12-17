@@ -16,6 +16,7 @@ public class PlayerJump : MonoBehaviour {
     private DestinationSelector destinationSelector;
     private RightClickOptions RightClick;
     public float overlapSize = 0.3f;
+    public bool isClimbing = false;
 
 
     //public AudioSource JumpSFX;
@@ -62,7 +63,10 @@ public class PlayerJump : MonoBehaviour {
     public void Jump() {
         jumpTimes += 1;
         rb.velocity = Vector2.up * jumpForce;
-        anim.SetTrigger("Jump");
+        if(!isClimbing){
+            anim.SetTrigger("Jump");
+        }
+        
         // JumpSFX.Play();
 
         //Vector2 movement = new Vector2(rb.velocity.x, jumpForce);
@@ -78,6 +82,22 @@ public class PlayerJump : MonoBehaviour {
             return true;
         }
         return false;
+    }
+
+    public void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Ladder")
+        {
+            isClimbing = true;
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Ladder")
+        {
+            isClimbing = false;
+        }
     }
 
 

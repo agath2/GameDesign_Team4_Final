@@ -58,7 +58,7 @@ public class CoinManager : MonoBehaviour
     private void UpdateCoinUI()
     {
         // Display the total coins, plus coins collected during the current level
-        coinText.text = "x" + (totalCoins + levelCoins).ToString();
+        coinText.text = "x " + (totalCoins + levelCoins).ToString();
     }
 
     // Optional: Call this method when a new level starts to reset the level coins

@@ -14,7 +14,7 @@ public class PlayerMove : MonoBehaviour
     public bool isAlive = true;
     //public AudioSource WalkSFX;
     private Vector3 hMove;
-    public float ClimbingSpeed = 1f;
+    public float ClimbSpeed = 6f;
     //public SpriteRenderer spriteRenderer;
     private DestinationSelector destinationSelector;
     private RightClickOptions RightClick;
@@ -170,7 +170,7 @@ public class PlayerMove : MonoBehaviour
             if (verticalInput > 0)
             { // Pressing up
                 Debug.Log("Climbing up the ladder");
-                rb2D.velocity = new Vector2(0f, 10f);
+                rb2D.velocity = new Vector2(0f, ClimbSpeed);
                 isClimbing = true;
                 // if(!animator.GetBool("isClimbing")){
                 //     animator.SetBool("isClimbing", true);
@@ -179,7 +179,7 @@ public class PlayerMove : MonoBehaviour
             else if (verticalInput < 0)
             { // Pressing down
                 Debug.Log("Climbing down the ladder");
-                rb2D.velocity = new Vector2(0f, -10f);
+                rb2D.velocity = new Vector2(0f, -ClimbSpeed);
                 isClimbing = true;
                 // if(!animator.GetBool("isClimbing")){
                 //     animator.SetBool("isClimbing", true);
