@@ -2971,7 +2971,7 @@ PrefabInstance:
     - target: {fileID: 8962850029001533052, guid: 881af7618d83e4144b6c1215b966287c, type: 3}
       propertyPath: pauseMenuPanel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1081993974}
     - target: {fileID: 9108061622576068047, guid: 881af7618d83e4144b6c1215b966287c, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -3001,6 +3001,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 881af7618d83e4144b6c1215b966287c, type: 3}
+--- !u!1 &1081993974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6365753195128477358, guid: 881af7618d83e4144b6c1215b966287c, type: 3}
+  m_PrefabInstance: {fileID: 1081993973}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1137382179
 GameObject:
   m_ObjectHideFlags: 0
@@ -7135,7 +7140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2017736135976079247, guid: 529fd1cee1b40473690122b6440f9160, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3902406311848341226, guid: 529fd1cee1b40473690122b6440f9160, type: 3}
       propertyPath: m_Enabled
@@ -7208,6 +7213,14 @@ PrefabInstance:
     - target: {fileID: 6524758971442160264, guid: 529fd1cee1b40473690122b6440f9160, type: 3}
       propertyPath: m_Color.r
       value: 0.56078434
+      objectReference: {fileID: 0}
+    - target: {fileID: 8255351742648083121, guid: 529fd1cee1b40473690122b6440f9160, type: 3}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076247971814129496, guid: 529fd1cee1b40473690122b6440f9160, type: 3}
+      propertyPath: m_Volume
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

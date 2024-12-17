@@ -31,7 +31,7 @@ public class DoorChange : MonoBehaviour
             hasKey = true;
             Destroy(other.gameObject);  // Destroy the key (since it's collected)
             Debug.Log("Key collected!");
-            StartCoroutine(OpenDoorAfterDelay());
+            // StartCoroutine(OpenDoorAfterDelay());
         }
 
         if (other.gameObject.CompareTag("Player"))  // Assuming the player has the tag "Player"
