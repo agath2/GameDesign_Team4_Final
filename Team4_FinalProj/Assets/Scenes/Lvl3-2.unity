@@ -9109,19 +9109,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 503454324352653065, guid: 8792ad9947680407f81a0a17df47b3c1, type: 3}
       propertyPath: m_Size.x
-      value: 0.9424887
+      value: 1.2033215
       objectReference: {fileID: 0}
     - target: {fileID: 503454324352653065, guid: 8792ad9947680407f81a0a17df47b3c1, type: 3}
       propertyPath: m_Size.y
-      value: 6.6897125
+      value: 6.1307845
       objectReference: {fileID: 0}
     - target: {fileID: 503454324352653065, guid: 8792ad9947680407f81a0a17df47b3c1, type: 3}
       propertyPath: m_Offset.x
-      value: 0.24279833
+      value: 0.112381935
       objectReference: {fileID: 0}
     - target: {fileID: 503454324352653065, guid: 8792ad9947680407f81a0a17df47b3c1, type: 3}
       propertyPath: m_Offset.y
-      value: 2.0014944
+      value: 1.7220304
       objectReference: {fileID: 0}
     - target: {fileID: 1918597655289881310, guid: 8792ad9947680407f81a0a17df47b3c1, type: 3}
       propertyPath: m_Color.b
