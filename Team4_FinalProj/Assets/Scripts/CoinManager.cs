@@ -17,6 +17,7 @@ public class CoinManager : MonoBehaviour
     // Audio source for coin pickup sound
     public AudioSource pickupSound;
 
+
     private void Awake()
     {
         // Singleton pattern: Ensure there's only one instance of CoinManager
@@ -64,11 +65,13 @@ public class CoinManager : MonoBehaviour
     // Optional: Call this method when a new level starts to reset the level coins
     public void StartNewLevel()
     {
+
         levelCoins = 0;  // Reset level coins at the start of a new level
         UpdateCoinUI();  // Update UI to show the reset value
+        
     }
 
-    public int GetFinalTotal(){
+    public int GetFinalTotalCollected(){
         return totalCoins;
     }
 }

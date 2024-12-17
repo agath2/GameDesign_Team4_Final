@@ -15,6 +15,7 @@ TagManager:
   - Car
   - PauseMenuSlider
   - Inventory
+  - Coin
   layers:
   - Default
   - TransparentFX

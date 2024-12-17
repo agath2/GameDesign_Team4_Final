@@ -4842,7 +4842,7 @@ GameObject:
   - component: {fileID: 1167453762864168263}
   m_Layer: 0
   m_Name: Coin
-  m_TagString: Untagged
+  m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4861,7 +4861,7 @@ Transform:
   m_Children:
   - {fileID: 4305130806662111615}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3729091970073424027
 SpriteRenderer:
@@ -4973,4 +4973,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 1
-  pickupSound: {fileID: 0}

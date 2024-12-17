@@ -12,8 +12,8 @@ public class Credits : MonoBehaviour
     void Start()
     {
         StartCoroutine(ReturnToMenu());
-        int finalTotal = CoinManager.instance.GetFinalTotal();
-        coinText.text = "You collected " + finalTotal.ToString() + "/30 coins";
+        int finalTotalCollected = CoinManager.instance.GetFinalTotalCollected();
+        coinText.text = "You collected " + finalTotalCollected.ToString() + "/30 coins";
     }
 
     // Update is called once per frame
