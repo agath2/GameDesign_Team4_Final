@@ -23,7 +23,7 @@ public class Credits : MonoBehaviour
     }
 
     IEnumerator ReturnToMenu(){
-        yield return new WaitForSeconds(36f);
+        yield return new WaitForSeconds(37f);
         SceneManager.LoadScene("StartScene");
     }
 }
